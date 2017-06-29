@@ -1,1 +1,11 @@
-# puppet
+# Módulos do Puppet
+
+Este repositório contém nossas implementações internas de puppet, as regras, configurações e módulos utilizados para as máquinas administrativas e de laboratório do Câmpus.
+
+O Puppet foi a ferramenta que nos permitiu automatizar uma série de tarefas e de atuar de maneira muito mais rápida no gerenciamento do nosso parque de máquinas, nos dando o poder de fazer atualizações e configurações em minutos do parque inteiro. A partir da consolidação do Puppet vislumbramos um caminho bem interessante a trilhar na área de infraestrutura ágil e melhorando nossa atuação.
+
+"*Automação de infraestrutura é o processo de criar scripts de ambientes — da instalação de um sistema operacional até a instalação e configuração de serviços em instâncias, a configuração de como as instâncias e softwares comunicam-se entre si, e muito mais. Criando scripts para ambientes, é possível aplicar a mesma configuração a um único nó ou a milhares.
+A automação de infraestrutura também atende por outros nomes: gerenciamento de configuração, gerenciamento de TI, fornecimento, infraestruturas em script, gerenciamento de configuração do sistema e muitos outros termos que se sobrepõem. O sentido é o mesmo: sua infraestrutura e sua configuração estão sendo descritas como um ou um conjunto de scripts para que os ambientes possam ser replicados de maneira muito menos propensa a erros*". [Referência](https://www.ibm.com/developerworks/br/library/a-devops2/index.html)
+
+*"Puppet é um utilitário para gerenciamento de configuração de código livre. Ele roda em muitos sistemas Unix-compativeis bem como em Microsoft Windows, e inclui sua própria linguagem declarativa para descrever a configuração do sistema.
+É uma ferramenta declarativa, projetada para gerenciar a configuração de Unix-compativeis e Microsoft Windows. O usuário descreve recursos do sistema e seu estado, usando a linguagem declarativa do Puppet ou uma (Linguagem_de_domínio_específico). Esta informação é armazenada em arquivos chamados "Puppet manifests". Puppet descobre a informação do sistema via um utilitário chamado Facter, e compila os arquivos Manifests em um sistema específico com recursos e dependências catalogados, que são aplicados no sistema alvo. Quaisquer ações tomadas pelo Puppet são então relatadas."* [Referência](https://pt.wikipedia.org/wiki/Puppet)
