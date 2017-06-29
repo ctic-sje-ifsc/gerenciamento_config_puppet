@@ -1,6 +1,6 @@
 # Módulos do Puppet
 
-Este repositório contém nossas implementações internas de puppet, as regras, configurações e módulos utilizados para as máquinas administrativas e de laboratório do Câmpus.
+Este repositório contém nossas implementações internas de [puppet](https://puppet.com/), as regras, configurações e módulos utilizados para as máquinas administrativas e de laboratório do Câmpus. Seguimos sempre que possível a [documentação oficial](https://docs.puppet.com).
 
 O Puppet foi a ferramenta que nos permitiu automatizar uma série de tarefas e de __atuar de maneira muito mais rápida no gerenciamento do nosso parque de máquinas__, nos dando o poder de fazer __atualizações e configurações em minutos do parque inteiro__. A partir da consolidação do Puppet vislumbramos um caminho bem interessante a trilhar na __área de infraestrutura ágil e melhorando nossa atuação__.
 
