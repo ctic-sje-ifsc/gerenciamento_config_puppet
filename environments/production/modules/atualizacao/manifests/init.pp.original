@@ -1,0 +1,135 @@
+class ingressa_ldap {
+
+	#PACOTES NECESSARIOS
+
+	$list = [ "libnss-ldap", "libpam-ldap", "ldap-utils", "nscd", "smbclient", "libpam-mount", "smbnetfs", "cifs-utils", "ldap-auth-config", "ldap-auth-client",  "auth-client-config", "keyutils", "libcryptsetup4", "libhx28" ]
+
+  package { $list:
+		ensure => latest,
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
+  }
+
+	file { 'nsswitch.conf':
+			path => '/etc/nsswitch.conf',
+			ensure => file,
+			source => 'puppet:///modules/ingressa_ldap/nsswitch.conf',
+			owner => root,
+			group => root,
+			mode => 0644,
+	}
+	file { 'ldap.conf':
+		path => '/etc/ldap.conf',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/ldap.conf',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+	file { 'ldap.ldap.conf':
+		path => '/etc/ldap/ldap.conf',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/ldap.conf',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	file { 'lightdm':
+		path => '/etc/pam.d/lightdm',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/lightdm',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+	file { 'common-session':
+		path => '/etc/pam.d/common-session',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/common-session',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+
+	file { 'pam_mount.conf.xml':
+		path => '/etc/security/pam_mount.conf.xml',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/pam_mount.conf.xml',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+	file { '50-ubuntu-mate.conf':
+		path => '/usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/50-ubuntu-mate.conf',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+	file { 'client.conf':
+		path => '/etc/cups/client.conf',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/client.conf',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	file { 'common-account':
+		path => '/etc/pam.d/common-account',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/common-account',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	file { 'common-auth':
+		path => '/etc/pam.d/common-auth',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/common-auth',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	file { 'common-password':
+		path => '/etc/pam.d/common-password',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/common-password',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	file { 'common-session-noninteractive':
+		path => '/etc/pam.d/common-session-noninteractive',
+		ensure => file,
+		source => 'puppet:///modules/ingressa_ldap/common-session-noninteractive',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+
+  /*
+	exec { 'pam-auth-update':
+    command => "/usr/sbin/pam-auth-update --force",
+    require => [
+    			File ['ldap.ldap.conf'],
+    			File ['pam_mount.conf.xml'],
+    			File ['50-ubuntu-mate.conf'],
+					File ['client.conf'],
+					File ['nsswitch.conf'],
+					File ['ldap.conf'],
+					File ['lightdm'],
+					File ['common-session'],
+					Package [$list],
+		],
+    refreshonly => true,
+  }
+ */
+
+}
