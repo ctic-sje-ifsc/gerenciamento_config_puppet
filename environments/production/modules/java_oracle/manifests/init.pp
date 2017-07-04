@@ -59,25 +59,25 @@ class java_oracle {
 
 	exec { 'apt-get-update_java':
 		command => "/usr/bin/apt-get update",
-		subscribe => exec['add_key_oracle_java'],
-		require => exec['add_key_oracle_java'],
+		subscribe => Exec['add_key_oracle_java'],
+		require => Exec['add_key_oracle_java'],
 		refreshonly => true,
 	}
 
 	exec { 'license_acc':
 		command => "/bin/echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/sudo /usr/bin/debconf-set-selections",
-		subscribe => exec['apt-get-update_java'],
-		require => exec['add_key_oracle_java'],
+		subscribe => Exec['apt-get-update_java'],
+		require => Exec['add_key_oracle_java'],
 		refreshonly => true,
 	}
 
 	package { 'oracle-java8-installer':
 		ensure => latest,
 		require => [
-				File ['source_oracle_java'],
-				exec ['apt-get-update_java'],
-				exec ['add_key_oracle_java'],
-				exec ['license_acc'],
+				File['source_oracle_java'],
+				Exec['apt-get-update_java'],
+				Exec['add_key_oracle_java'],
+				Exec['license_acc'],
 		],
 	}
 

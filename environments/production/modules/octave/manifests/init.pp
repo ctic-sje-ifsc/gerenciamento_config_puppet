@@ -3,9 +3,9 @@ class octave {
 	package { 'octave':
 		ensure => latest,
 		require => [
-				File ['source_octave'],
-				exec ['apt-get-update_octave'],
-				exec ['add_key_octave'],
+				File['source_octave'],
+				Exec['apt-get-update_octave'],
+				Exec['add_key_octave'],
 		],
 	}
 	package { 'liboctave-dev':
@@ -40,8 +40,8 @@ class octave {
 	}
 	exec { 'apt-get-update_octave':
 		command => "/usr/bin/apt-get update",
-		subscribe => exec['add_key_octave'],
-		require => exec['add_key_octave'],
+		subscribe => Exec['add_key_octave'],
+		require => Exec['add_key_octave'],
 		refreshonly => true,
 	}
 

@@ -4,24 +4,24 @@ class qgis {
 		ensure => latest,
 		require => [
 				File ['source_qgis'],
-				exec ['apt-get-update_qgis'],
-				exec ['add_key_qgis'],
+				Exec ['apt-get-update_qgis'],
+				Exec ['add_key_qgis'],
 		],
 	}
 	package { 'python-qgis':
 		ensure => latest,
 		require => [
 				File ['source_qgis'],
-				exec ['apt-get-update_qgis'],
-				exec ['add_key_qgis'],
+				Exec ['apt-get-update_qgis'],
+				Exec ['add_key_qgis'],
 		],
 	}
 	package { 'qgis-plugin-grass':
 		ensure => latest,
 		require => [
 				File ['source_qgis'],
-				exec ['apt-get-update_qgis'],
-				exec ['add_key_qgis'],
+				Exec ['apt-get-update_qgis'],
+				Exec ['add_key_qgis'],
 		],
 	}
 
