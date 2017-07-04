@@ -24,7 +24,7 @@ class irpf_lin {
 		require => [
 				File['irpf17.tgz'],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# So executa se nao tiver o arquivo abaixo
 		creates => '/usr/local/IRPF2017/irpf.jar',
 		timeout => 0,
  }
