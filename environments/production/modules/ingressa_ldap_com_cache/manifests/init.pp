@@ -7,7 +7,7 @@ if $::kernel == windows {
 		provider => powershell,
 		creates => 'c:\gatilho_dominio1.txt',
 		}
-	###### naum funciona no windows 8 mas funciona no 7
+	###### nao funciona no windows 8 mas funciona no 7
 	exec { 'dnswins':
 		require => Exec ["registro"],
 		command => '(Get-WmiObject -Class win32_networkadapterconfiguration -Filter "IPEnabled = true").SetWINSServer("172.18.109.10","") ; invoke-wmimethod -Class win32_networkadapterconfiguration -Name setDNSSuffixSearchOrder -ArgumentList @("sj.ifsc.edu.br"),$null ; New-Item c:\gatilho_dominio2.txt -type file',
