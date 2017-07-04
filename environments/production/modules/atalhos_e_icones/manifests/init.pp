@@ -72,7 +72,7 @@ class atalhos_e_icones {
 		group => root,
 		mode => 0644,
 	}
-	#necessario adicionar export MGLS_LICENSE_FILE=1800@vm-lan2.sj.ifsc.edu.br e export LD_LIBRARY_PATH=/opt/altera/13.0sp1/lib32 para conseguir criar(fazer funcionar) o atalho
+	# necessario adicionar export MGLS_LICENSE_FILE=1800@vm-lan2.sj.ifsc.edu.br e export LD_LIBRARY_PATH=/opt/altera/13.0sp1/lib32 para conseguir criar(fazer funcionar) o atalho
 	file { 'vsim':
 		path => '/opt/altera/13.0sp1/modelsim_ae/vco',
 		ensure => file,
