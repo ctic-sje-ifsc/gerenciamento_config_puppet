@@ -51,7 +51,7 @@ class arduino_1_6_6 {
         require => [ 
                 File['arduino-1.6.6-linux32.tar.xz'],
         ],	
-	# so executa senao tiver o arquivo abaixo
+	# so executa se nao tiver o arquivo abaixo
 		creates => '/opt/arduino-1.6.6/arduino',
 		timeout => 0,
 		onlyif => '/usr/bin/test $(/bin/uname -m) = i686',
