@@ -11,7 +11,7 @@ class banco {
 #         require => File ['warsaw'],
 #         creates => 'C:\Program Files\warsaw_setup.exe',
 #  }
-### EXEMPLO BAIXAR WINDOWS, naum sei se funciona
+### EXEMPLO BAIXAR WINDOWS, nao sei se funciona
 # command => 'Invoke-WebRequest http://download.geteventstore.com/binaries/EventStore-OSS-Win-v3.0.0-rc9.zip -OutFile c:\\downloads\\EventStore-OSS-Win-v3.0.0-rc9.zip',
 
 if $::kernel == windows {
@@ -42,7 +42,7 @@ if $::kernel == windows {
   }
 }
 
-#### PARAMOS POIS ELE PEDE INTERCAO E QUE O NAVEGQDOR ESTEJA FECHADO, TAMBEM TEM QUE DAR VARIOS ENTER PQ PEDE SENHA DO PAM_MOUNT
+#### PARAMOS POIS ELE PEDE INTERCAO E QUE O NAVEGADOR ESTEJA FECHADO, TAMBEM TEM QUE DAR VARIOS ENTER PQ PEDE SENHA DO PAM_MOUNT
 
 if $lsbdistcodename == jessie {
 

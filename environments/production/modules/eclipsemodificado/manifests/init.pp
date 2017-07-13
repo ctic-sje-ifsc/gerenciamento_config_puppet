@@ -31,7 +31,7 @@ class eclipsemodificado {
 #				Package['openjdk-7-jre'],
 				File['/opt/eclipse'],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# so executa se nao tiver o arquivo abaixo
 		creates => '/opt/eclipse/eclipse',
 		timeout => 0,
 		onlyif => '/usr/bin/test $(/bin/uname -m) = x86_64',
@@ -43,7 +43,7 @@ class eclipsemodificado {
 #				Package['openjdk-7-jre'],
 				File['/opt/eclipse'],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# so executa se nao tiver o arquivo abaixo
 		creates => '/opt/eclipse/eclipse',
 		timeout => 0,
 		onlyif => ["/usr/bin/test $(/bin/uname -m) = i386", "/usr/bin/test $(/bin/uname -m) = i486", "/usr/bin/test $(/bin/uname -m) = i586", "/usr/bin/test $(/bin/uname -m) = i686"]

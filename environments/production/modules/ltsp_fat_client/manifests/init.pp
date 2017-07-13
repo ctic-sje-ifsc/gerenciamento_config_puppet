@@ -1,6 +1,6 @@
 class ltsp_fat_client {
 
-###PACOTES NECESSARIOS
+### PACOTES NECESSARIOS
 
   package { 'ltsp-server-standalone':
 		ensure => latest,
@@ -18,9 +18,9 @@ class ltsp_fat_client {
 		ensure => latest,
     }
 
-###FIM DOS PACOTES NECESSARIOS
+### FIM DOS PACOTES NECESSARIOS
 
-###SERVICOS RODANDO
+### SERVICOS RODANDO
   service { 'isc-dhcp-server':
     ensure => running,
     enable => true,
@@ -31,7 +31,7 @@ class ltsp_fat_client {
     ],
     require => Package['isc-dhcp-server'],
   }
-###FIM DOS SERVICOS RODANDO
+### FIM DOS SERVICOS RODANDO
 
 #### CONFIGURACOES DE REDE
 
@@ -64,7 +64,7 @@ class ltsp_fat_client {
     require => Package['ifenslave'],
   }
 
-  ##CONFIGURA O ENCAMINHAMENTO
+  ### CONFIGURA O ENCAMINHAMENTO
   file { 'sysctl.conf':
       path => '/etc/sysctl.conf',
       ensure => file,
@@ -102,10 +102,10 @@ class ltsp_fat_client {
     mode => 0644,
   }
 
-  # FIM DO CONFIGURA O ENCAMINHAMENTO
-#### FIM DAS CONFIGURACOES DE REDE
+### FIM DO CONFIGURA O ENCAMINHAMENTO
+### FIM DAS CONFIGURACOES DE REDE
 
-###ARQUIVOS DE CONF NECESSARIOS
+### ARQUIVOS DE CONF NECESSARIOS
 
   file { 'dhcpd.conf':
 		path => '/etc/ltsp/dhcpd.conf',
@@ -153,9 +153,9 @@ class ltsp_fat_client {
     require => Package['isc-dhcp-server'],
   }
 
-###FIM DOS ARQUIVOS DE CONF NECESSARIOS
+### FIM DOS ARQUIVOS DE CONF NECESSARIOS
 
-###EXECS NECESSARIOS
+### EXECS NECESSARIOS
     exec { 'gatilho_dhcp':
    		command => "/bin/echo 'include \"/etc/ltsp/dhcpd.conf\";' >> /etc/dhcp/dhcpd.conf ; /bin/touch /var/gatilho_dhcp",
    		timeout => 0,
@@ -166,7 +166,7 @@ class ltsp_fat_client {
       ],
       subscribe => File['dhcpd.conf2'],
     }
-###FIM DOS EXECS NECESSARIOS
+### FIM DOS EXECS NECESSARIOS
 
 ### CONSTRUCAO DA IMAGEM
 
@@ -188,9 +188,9 @@ class ltsp_fat_client {
     require => Package['ltsp-server-standalone'],
   }
 
-###FIM DA CONSTRUCAO DA IMAGEM
+### FIM DA CONSTRUCAO DA IMAGEM
 
-###INICIO DOS USUARIOS
+### INICIO DOS USUARIOS
 
 /*exec { 'add_epoptes':
   command => '/usr/bin/gpasswd -a bolsista epoptes ; /usr/bin/gpasswd -a ctic epoptes ; /bin/touch /var/gatilho_add_epoptes',
@@ -395,6 +395,6 @@ class ltsp_fat_client {
     shell => '/bin/bash',
   }
 
-###FIM DOS USUARIOS
+### FIM DOS USUARIOS
 
 }

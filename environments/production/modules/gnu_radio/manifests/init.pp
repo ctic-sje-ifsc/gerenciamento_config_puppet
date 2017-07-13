@@ -17,7 +17,7 @@ class gnu_radio {
 		require => [
 				File['/etc/modprobe.d/blacklist.conf'],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# So executa se nao tiver o arquivo abaixo
 		creates => '/var/gatilho_gnu_radio',
 		timeout => 0,
  }

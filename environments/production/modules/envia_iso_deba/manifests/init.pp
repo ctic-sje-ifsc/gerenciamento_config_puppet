@@ -1,7 +1,7 @@
 class envia_iso_deba {
 
-##serve para enviar alguma imagem para algum lab, copia da maquina do ricardo
-##nao usar a qualquer momento. Incluir o modulo e ir no laboratorio ligas as maquinas.
+## Serve para enviar alguma imagem para algum lab, copia da maquina do ricardo.
+## Nao usar a qualquer momento. Incluir o modulo e ir no laboratorio ligar as maquinas.
 
 	exec { 'debian':
 		command => '/bin/mount -t nfs 172.18.20.200:/dados/ /mnt ; /bin/cp /mnt/Imagens_ISOs/Debian/debian-8.4.0-amd64-kde-CD-1.iso /home/imagens',

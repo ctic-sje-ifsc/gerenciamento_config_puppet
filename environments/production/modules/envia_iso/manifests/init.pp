@@ -1,7 +1,7 @@
 class envia_iso {
 
-##serve para enviar alguma imagem para algum lab, copia da maquina do ricardo
-##nao usar a qualquer momento. Incluir o modulo e ir no laboratorio ligas as maquinas.
+## Serve para enviar alguma imagem para algum lab, copia da maquina do ricardo.
+## Nao usar a qualquer momento. Incluir o modulo e ir no laboratorio ligar as maquinas.
 
 	exec { 'ubuntu_mate':
 		command => '/bin/mount -t nfs 172.18.20.200:/dados/ /mnt ; /bin/cp /mnt/Imagens_ISOs/Ubuntu/ubuntu-mate-14.04.2-LTS-desktop-amd64.iso /home/imagens',

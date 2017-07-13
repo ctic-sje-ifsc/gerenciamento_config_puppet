@@ -37,7 +37,7 @@ class zoiper3-3 {
 		require => [
 				File['zoiper64.tgz'],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# so executa se nao tiver o arquivo abaixo
 		creates => '/opt/Zoiper64/zoiper',
 		timeout => 0,
 		onlyif => '/usr/bin/test $(/bin/uname -m) = x86_64',

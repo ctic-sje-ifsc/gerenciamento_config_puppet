@@ -50,7 +50,7 @@ class netkit2 {
 				File['/usr/local/netkit2'],
 				Package[$list],
 		],
-		# so executa senao tiver o arquivo abaixo
+		# So executa se nao tiver o arquivo abaixo
 		creates => '/usr/local/netkit2/netkit-version.txt',
 		timeout => 0,		
 	}
