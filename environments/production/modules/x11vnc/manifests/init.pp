@@ -4,6 +4,7 @@ class x11vnc {
 		$initd_x11vnc = $lsbdistcodename ? {
 			trusty	=> 'puppet:///modules/x11vnc/ubuntu_x11vnc',
 			jessie => 'puppet:///modules/x11vnc/x11vnc',
+			wheezy => 'puppet:///modules/x11vnc/x11vnc',
 		}
 		package { 'x11vnc':
 			ensure => latest,
@@ -18,7 +19,7 @@ class x11vnc {
 			mode => 0755,
 		}
 
-		if $lsbdistcodename == jessie {
+		if $lsbdistcodename == jessie or $lsbdistcodename == wheezy {
 			file { 'x11vnc.service':
 				path => '/etc/systemd/system/x11vnc.service',
 				ensure => file,
@@ -28,7 +29,7 @@ class x11vnc {
 				mode => 0755,
 			}
 		}
-		if $lsbdistcodename == jessie {
+		if $lsbdistcodename == jessie or $lsbdistcodename == wheezy {
 			exec { 'systemctl_daemon-reload_x11vnc':
 				command => "/bin/systemctl daemon-reload",
 				subscribe => File["x11vnc.service"],

@@ -153,6 +153,7 @@ node /^sj-lin-mtele/ {
 	}
 	include x11vnc
 	include openjdk-7u111
+	include grub_save
 }
 
 node "sj-lin-mtele-744527.sj.ifsc.edu.br" {
@@ -189,6 +190,11 @@ node /^sj-lin-almtele/ {
 	include rclocal_adm
 	include grub_lab_win
 	include openjdk-7u111
+	exec { 'configura_gnome_classic_default':
+		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
+		creates => '/var/gatilho_config_default_gnome_classic',
+	}
+	
 }
 ########################## Suporte Educacional
 

@@ -8,8 +8,8 @@ class final_semestre {
 		creates => '/var/gatilho_vm',
 	}
 	exec { 'limpar_pasta':
-		command => '/bin/rm -rf /media/aluno/trabalhos/* 2>> /final_semestre.log; /bin/touch /var/gatilho_zera_pasta; /bin/rm /var/gatilho_zera_pasta; /bin/touch /var/gatilho_zera_pasta_2',
-		creates => '/var/gatilho_zera_pasta_2',
+		command => '/bin/rm -rf /media/aluno/trabalhos/* 2>> /final_semestre.log; /bin/touch /var/gatilho_zera_pasta; /bin/rm /var/gatilho_zera_pasta_2',
+		creates => '/var/gatilho_zera_pasta',
 		timeout => 0,
 	}
 

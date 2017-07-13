@@ -160,6 +160,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include astah
 #	include ingressa_ldap_novo
 # include android_studio
+include android_studio
 }
 ################################## FIM do teste do Ricardo
 

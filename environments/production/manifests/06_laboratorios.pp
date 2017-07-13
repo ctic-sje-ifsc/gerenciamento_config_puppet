@@ -8,7 +8,6 @@
 node "sj-prog-38111.sj.ifsc.edu.br" {
 		include sistema_win_labs
 		include ingressa_ldap
-		#include progisp
 }
 
 #linux
@@ -47,7 +46,6 @@ node /^sj-labprog-38111/ {
 #windows
 node /^sj-prog/ {
 		include sistema_win_labs
-		include progisp
 }
 
 #Linux
@@ -518,9 +516,11 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include epoptes
 	include chave_compartilhada
 	include ingressa_ldap
-	include atualiza_mac
 	include netbeans_8_2
 	include packettracer7
+	include android_studio
+	#include atualiza_mac
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -554,10 +554,12 @@ node /^sj-labredes2/ {
 	include epoptes-client
 	include apagaaluno
 	include chave_compartilhada
-	include atualiza_mac
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7
+	include android_studio
+    #include atualiza_mac
+	#include final_semestre
 }
 
 

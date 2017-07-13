@@ -59,7 +59,13 @@ node /^sj-mtele-/ {
 	include sistema_win
 	include ntp
 	include ingressa_ldap
-  include ltspice
+    include ltspice
+    #pedido do Volney
+    package { 'inkscape':
+      ensure   => latest,
+      install_options => ['-y', '--allow-empty-checksums'],
+      provider => 'chocolatey',
+    }
 }
 ########################## Manutencao
 node /^sj-manut-/ {
