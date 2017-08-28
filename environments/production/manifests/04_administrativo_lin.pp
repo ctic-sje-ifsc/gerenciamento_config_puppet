@@ -96,7 +96,8 @@ node /sj-lin-bal-biblio/ {
 	include progsadm
 	include rclocal_adm
 	include grub_soh_lin
-	include sophia
+#	include sophia
+    include remoto_sophia
 	include java_oracle
 	include cupsd
 }
@@ -370,7 +371,7 @@ node /^sj-lin-cgp/ {
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
-	include grub_soh_lin
+	include grub_adm_win
 	include remoto_pontosecullum
 	include remoto_ibsispes
 	include openjdk-7u111
@@ -392,7 +393,7 @@ node /^sj-lin-dam/ {
 node "sj-lin-reg-humberto.sj.ifsc.edu.br" {
 	include openjdk-7u111
 	include java_oracle
-
+	include ingressa_ldap
 }
 
 #Registro

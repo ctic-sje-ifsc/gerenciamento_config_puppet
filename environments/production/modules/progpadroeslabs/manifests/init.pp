@@ -52,8 +52,11 @@ class progpadroeslabs {
     creates => '/usr/local/src/gatilho_VM_extension',
     timeout => 0,
   }
-
-
+## Para resolver o problema da janela de informacao que ficava fundo amarelo com letra branca do chamado IFSC#2017082510000862
+  file {'remove_arquivo_troll':
+    path => '/home/aluno/.config/Trolltech.conf',
+    ensure => absent,
+  }
 
   #exec { 'wget_extpack':
   #  command => '/usr/bin/wget -P /home/imagens/ http://download.virtualbox.org/virtualbox/5.0.22/Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack ; /usr/bin/VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack',

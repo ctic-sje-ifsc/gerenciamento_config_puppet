@@ -137,7 +137,7 @@ node "pc-sala.sj.ifsc.edu.br" {
 	include atualizacao
 }
 ################################## teste do Ricardo
-##WINDOWS
+##WINDOWS 32bits
 node "vrtual-PC.sj.ifsc.edu.br" {
 #		include ingressa_ldap
 #		include sair_ldap
@@ -145,14 +145,20 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 #		include winscp5
 #		include limpa_windows
 #   include progisp
-#   include mmanagal
 }
+##WINDOWS 64bits
+node "win7-64-pc.sj.ifsc.edu.br" {
+#   include progisp
+#   include kdenlive17
+}
+
 ##DEBIAN 8
 node "sj-lin-imgdeb8.sj.ifsc.edu.br" {
 #		include banco
 }
 ##UBUNTU MATE
 node "aluno-VirtualBox.sj.ifsc.edu.br" {
+#include octave
 #	include arduino_web_plugin
 #	include cupsd
 #	include netbeans_8_2
@@ -160,7 +166,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include astah
 #	include ingressa_ldap_novo
 # include android_studio
-include android_studio
+
 }
 ################################## FIM do teste do Ricardo
 

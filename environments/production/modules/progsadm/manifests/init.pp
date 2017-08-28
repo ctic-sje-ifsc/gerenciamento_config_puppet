@@ -22,7 +22,7 @@ class progsadm {
     }
 	##install skype
 	file { 'source_skype':
-		path => '/etc/apt/sources.list.d/skype-stable.list',
+		path => '/etc/apt/sources.list.d/skype.list',
 		ensure => file,
 		source => 'puppet:///modules/progsadm/skype.list',
 		owner => root,

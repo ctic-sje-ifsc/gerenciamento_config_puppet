@@ -18,6 +18,17 @@ class octave {
 		],
 	}
 
+	$list_octave = [ "octave-communications", "octave-control", "octave-signal" ]
+	package { $list_octave:
+		ensure => latest,
+		require => [
+				Package ['octave'],
+				File ['source_octave'],
+				exec ['apt-get-update_octave'],
+				exec ['add_key_octave'],
+		],
+	}
+
 	$source = $lsbdistcodename ? {
 		trusty	=> 'puppet:///modules/octave/octave.list',
 		jessie => 'puppet:///modules/octave/octave.deb.list',

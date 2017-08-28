@@ -8,6 +8,7 @@
 node "sj-prog-38111.sj.ifsc.edu.br" {
 		include sistema_win_labs
 		include ingressa_ldap
+		include progisp
 }
 
 #linux
@@ -30,6 +31,7 @@ node /^sj-labprog-38111/ {
 	include ingressa_ldap
 	include netbeans_8_2
 	include atualiza_mac
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -46,6 +48,8 @@ node /^sj-labprog-38111/ {
 #windows
 node /^sj-prog/ {
 		include sistema_win_labs
+		include progisp
+		include packettracer7
 }
 
 #Linux
@@ -67,6 +71,8 @@ node /^sj-labprog/ {
 	include atualiza_mac
 	include disable_ipv6
 	include netbeans_8_2
+	include packettracer7
+	#include final_semestre
 }
 ##
 ########################################## FIM LAB PROG #################################################
@@ -93,6 +99,7 @@ node "sj-apoio-38114.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	include atualiza_mac
 	include netbeans_8_2
+	include final_semestre
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -126,6 +133,7 @@ node /^sj-apoio/ {
 	include disable_ipv6
 	include packettracer7
 	include netbeans_8_2
+	#include final_semestre
 	#include arduino_web_plugin
 }
 ##
@@ -153,6 +161,7 @@ node "sj-redes1-d1.sj.ifsc.edu.br" {
 	include atualiza_mac
 	include netbeans_8_2
 	include packettracer7
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -185,6 +194,7 @@ node /^sj-redes1/ {
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7
+	#include final_semestre
 }
 
 ##
@@ -302,8 +312,9 @@ node "sj-labcad1-37247.sj.ifsc.edu.br" {
 	include apagaaluno
 	include chave_compartilhada
 	include ingressa_ldap
-	include envia_iso
+	#include envia_iso
 	include atualiza_mac
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -335,6 +346,7 @@ node "sj-lin-cad3-744528.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	include quadro_interativo
 	include atualiza_mac
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -366,6 +378,7 @@ node "sj-labcad2-38841.sj.ifsc.edu.br" {
 	include chave_compartilhada
 	include ingressa_ldap
 	include atualiza_mac
+	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -398,6 +411,7 @@ node /^sj-labcad/ {
 	#include envia_iso
 	include atualiza_mac
 	include disable_ipv6
+	include final_semestre
 }
 
 ##
@@ -426,6 +440,7 @@ node "sj-lin-labinf-756045.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	include atualiza_mac
 	include netbeans_8_2
+	include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -465,6 +480,7 @@ node /^sj-labin/ {
 	include atualiza_mac
 	include disable_ipv6
 	include netbeans_8_2
+	include final_semestre
 
 }
 ##
@@ -495,10 +511,12 @@ node "sj-inf-756045.sj.ifsc.edu.br" {
 
 ########################################## INICIO DO REDES2 #################################################
 
-#windons aluno e prof
-node /^sj-red2/ {
+#windons professor
+node "sj-red2-703872.sj.ifsc.edu.br" {
 	include sistema_win_labs
+	include ingressa_ldap
 }
+
 #linux prof
 node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include sistema
@@ -538,6 +556,12 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 		mode => 0777,
   	}
 }
+
+#windons aluno
+node /^sj-red2/ {
+	include sistema_win_labs
+}
+
 #linux aluno
 node /^sj-labredes2/ {
 	include sistema
@@ -580,6 +604,7 @@ node /^sj-lin-labbiblio-/ {
 	include eclipsemodificado
 	include rclocal
 	include apagaaluno
+  #include final_semestre
 }
 ##PC ALUNO BIBLIOTECA WINDOWS
 node /^sj-labbib-/ {
@@ -665,17 +690,11 @@ node /^sj-labvo/ {
 #Lab Ciencias Humanas
 	#win
 	node /^sj-ciehu/ {
+		include ntp
 		include sistema_win
 		include ingressa_ldap
 	}
 	#linux
-	node /^sj-labciehu/ { #Remover depois que clonar todas
-		include progsadm
-		include ingressa_ldap
-		include ntp
-		include rclocal_adm
-		include grub_lab_win
-	}
 	node /^sj-lin-ciehu/ {
 		include progsadm
 		include ingressa_ldap
@@ -683,7 +702,6 @@ node /^sj-labvo/ {
 		include rclocal_adm
 		include grub_lab_win
 	}
-
 
 #Lab Meios de transmissao
 	#Linux e windows
