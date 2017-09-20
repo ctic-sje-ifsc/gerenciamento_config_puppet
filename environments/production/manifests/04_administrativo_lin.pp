@@ -346,11 +346,11 @@ node /^sj-lin-comaf/ {
 }
 ########################## COGER
 node /^sj-lin-coger/ {
-  include progsadm
-	include ingressa_ldap
+ 	include progsadm
+ 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
-	include grub_soh_lin
+	include grub_lab_lin
 	include openjdk-7u111
 }
 #########################SECRETaria

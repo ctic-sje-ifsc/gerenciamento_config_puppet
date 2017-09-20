@@ -18,6 +18,9 @@ node "sj-imagem-37246.sj.ifsc.edu.br" {
 	#include ingressa_ldap
 	include arduino_web_plugin
 }
+node "server-storage-2" {
+	include ingressa_ldap
+}
 
 
 
