@@ -1,7 +1,7 @@
 # 01_global.pp
 
 include openaudit
-
+include troca_planodefundo
 if ($hostname =~ /^server-/) {
 
 }else {

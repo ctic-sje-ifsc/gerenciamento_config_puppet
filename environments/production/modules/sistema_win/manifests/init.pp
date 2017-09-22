@@ -102,4 +102,5 @@ file { 'puppet.conf':
   source_permissions => ignore,
 }
 
+
 }

@@ -139,7 +139,6 @@ if $lsbdistcodename == jessie {
 	}
 
 	include unattended-upgrades
-	
 
 	if $lsbdistcodename == jessie {
 		package { 'pkg-mozilla-archive-keyring':
@@ -162,4 +161,3 @@ if $lsbdistcodename == jessie {
     }
 
 }
-
