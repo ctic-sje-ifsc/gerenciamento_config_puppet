@@ -134,8 +134,7 @@ node /^sj-apoio/ {
 	include packettracer7
 	include netbeans_8_2
 	#include final_semestre
-	#include arduino_web_plugin
-}
+	}
 ##
 ########################################## FIM LAB APOIO #################################################
 

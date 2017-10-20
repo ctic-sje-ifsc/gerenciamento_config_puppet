@@ -136,8 +136,7 @@ node "pc-sala.sj.ifsc.edu.br" {
   #include ingressa_ldap
 	#include banco
 	#include erre
-	include atualizacao
-}
+	}
 ################################## teste do Ricardo
 ##WINDOWS 32bits
 node "vrtual-PC.sj.ifsc.edu.br" {
