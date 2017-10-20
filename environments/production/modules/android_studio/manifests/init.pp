@@ -1,8 +1,7 @@
 class android_studio {
-	##INICIO DO astah
 
   exec { 'android_studio':
-		command => '/bin/mount -t nfs 191.36.8.93:/dados/ /mnt ; /bin/cp -r /mnt/ANDROID /opt/',
+		command => '/bin/mount -t nfs storage1:/mnt/storage/storage/puppet_files /mnt ; /bin/cp -r /mnt/ANDROID /opt/',
 		creates => '/opt/ANDROID',
 		timeout => 0,
 	}

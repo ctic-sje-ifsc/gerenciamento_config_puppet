@@ -16,7 +16,6 @@ node "debian-virtual.sj.ifsc.edu.br" {
 node "sj-imagem-37246.sj.ifsc.edu.br" {
 	#include ingressa_ldap_anterior
 	#include ingressa_ldap
-	include arduino_web_plugin
 }
 node "server-storage-2" {
 	include ingressa_ldap
@@ -162,7 +161,6 @@ node "sj-lin-imgdeb8.sj.ifsc.edu.br" {
 ##UBUNTU MATE
 node "aluno-VirtualBox.sj.ifsc.edu.br" {
 #include octave
-#	include arduino_web_plugin
 #	include cupsd
 #	include netbeans_8_2
 #	include packettracer7
