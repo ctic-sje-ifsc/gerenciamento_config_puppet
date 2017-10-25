@@ -101,5 +101,22 @@ class atalhos_e_icones {
 		target => '/opt/matlab/R2012b/bin/matlab',
 	}
 
+#Para solucionar problemas com Ctrl + C Ctrl + v no matlab
+	file { 'matlab.prf':
+		path => '/home/aluno/.matlab/R2015a/matlab.prf',
+		ensure => file,
+		source => 'puppet:///modules/atalhos_e_icones/matlab.prf',
+		owner => aluno,
+		group => aluno,
+		mode => 0664,
+	}
+#Criar um link do salve seus trabalhos aqui no home do aluno
+	file { '/home/aluno/trabalhos':
+		ensure => link,
+		target => '/media/aluno/trabalhos',
+		owner => aluno,
+		group => aluno,
+	}
+
 
 }
