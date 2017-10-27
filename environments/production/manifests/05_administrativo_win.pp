@@ -179,20 +179,6 @@ node /sj-cotel/ {
 	include ingressa_ldap
 }
 
-node /sj-lin-cotel/ {
-	include sistema
-	include grub_lab_lin
-	include progpadroeslabs
-	include sshd_config
-	include arduino_1_6_6
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include chave_compartilhada
-	include ingressa_ldap
-}
-
 ########################## Mini auditorio
 node /^sj-maud/ {
   include sistema_win

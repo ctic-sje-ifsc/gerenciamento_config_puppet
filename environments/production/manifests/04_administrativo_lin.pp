@@ -140,6 +140,15 @@ node /^sj-lin-des2/ {
 	include x11vnc
 	include openjdk-7u111
 }
+node "sj-lin-des2-744933.sj.ifsc.edu.br" {
+	include sistema
+	include progpadroeslabs
+	include arduino_1_6_6
+	include netkit2
+	include eclipsemodificado
+	include netbeans_8_2
+	include packettracer7
+}
 ########################## Meios de Telecomunicacoes
 node /^sj-lin-mtele/ {
 #	include progsadm
@@ -172,6 +181,31 @@ node "sj-lin-mtele-744527.sj.ifsc.edu.br" {
 	include openjdk-7u111
 }
 
+########################## Coord TELE
+node /sj-lin-cotel/ {
+	include sistema
+	include grub_lab_lin
+	include progpadroeslabs
+	include sshd_config
+	include arduino_1_6_6
+	include netkit2
+	include atalhos_e_icones
+	include eclipsemodificado
+	include rclocal
+	include chave_compartilhada
+	include ingressa_ldap
+}
+node "sj-lin-cotel-38112.sj.ifsc.edu.br" {
+	include sistema
+	include progpadroeslabs
+	include arduino_1_6_6
+	include netkit2
+	include eclipsemodificado
+	include netbeans_8_2
+	include packettracer7
+}
+
+
 #feito dia 19-02-2016
 ########################## Computadores almoxarifado
 node /^sj-lin-almox/ {
@@ -195,7 +229,7 @@ node /^sj-lin-almtele/ {
 		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
 		creates => '/var/gatilho_config_default_gnome_classic',
 	}
-	
+
 }
 ########################## Suporte Educacional
 
