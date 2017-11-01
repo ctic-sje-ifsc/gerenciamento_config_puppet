@@ -31,11 +31,11 @@ install_options => ['--forcex86', '-f', '-y', '--x86', '--allow-empty-checksums'
 # uninstall_options => ['-a', '-f', '-y', '-x'],
   provider => 'chocolatey',
 }
-package { 'firefox':
-  ensure   => '51.0.1',
-  provider => 'chocolatey',
-  install_options => ['--x86','-y', '--allow-empty-checksums'],
-}
+#package { 'firefox':
+#  ensure   => '51.0.1',
+#  provider => 'chocolatey',
+  #install_options => ['--x86','-y', '--allow-empty-checksums'],
+#}
 package { 'firefoxesr':
   ensure   => latest,
   provider => 'chocolatey',
@@ -57,12 +57,12 @@ package { 'vlc':
   provider => 'chocolatey',
 }
 package { 'libreoffice':
-  ensure   => '5.2.5',
+  ensure   => '5.3.4',
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
 package { 'libreoffice-help':
-  ensure   => '5.2.5',
+  ensure   => '5.2.0',
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
