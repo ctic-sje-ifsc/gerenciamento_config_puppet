@@ -149,7 +149,7 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 }
 ##WINDOWS 64bits
 node "win7-64-pc.sj.ifsc.edu.br" {
-#   include progisp
+   include ultravnc_win
 #   include kdenlive17
 }
 
