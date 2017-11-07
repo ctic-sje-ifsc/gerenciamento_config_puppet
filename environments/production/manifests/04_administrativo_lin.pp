@@ -405,7 +405,8 @@ node /^sj-lin-cgp/ {
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
-	include grub_adm_win
+	include	grub_soh_lin
+	#include grub_adm_win
 	include remoto_pontosecullum
 	include remoto_ibsispes
 	include openjdk-7u111
