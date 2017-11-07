@@ -117,6 +117,16 @@ class atalhos_e_icones {
 		owner => aluno,
 		group => aluno,
 	}
+	#Criar um link com as configuracoes corretas do x2goclient a pedido-chamado do Moecke
+	file { 'x2goclient_prefs':
+		path => '/home/aluno/.x2goclient',
+		ensure => file,
+		recurse => true,
+		source => 'puppet:///modules/atalhos_e_icones/.x2goclient',
+		owner => aluno,
+		group => aluno,
+		mode => 0775,
+	}
 
 
 }

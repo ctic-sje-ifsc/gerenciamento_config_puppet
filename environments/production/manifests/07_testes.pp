@@ -165,7 +165,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 #	include packettracer7
 # include astah
 #	include ingressa_ldap_novo
-include android_studio3
+# include android_studio3
 
 }
 ################################## FIM do teste do Ricardo
