@@ -337,6 +337,8 @@ node /^sj-lin-mcul/ {
 		include grub_lab_lin
 		include imp_padrao
 		include openjdk-7u111
+		include cmap_tools
+		include qgis
 }
 ########################## Mini auditorio
 node /^sj-lin-maud/ {
