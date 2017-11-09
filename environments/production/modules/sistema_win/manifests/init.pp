@@ -56,11 +56,11 @@ package { 'vlc':
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
-#package { 'libreoffice':
-#  ensure   => '5.3.4',
-#  install_options => ['-y', '--allow-empty-checksums'],
-#  provider => 'chocolatey',
-#}
+package { 'libreoffice-oldstable':
+  ensure   => latest,
+  install_options => ['-y', '--allow-empty-checksums'],
+  provider => 'chocolatey',
+}
 #package { 'libreoffice-help':
 #  ensure   => '5.2.0',
 #  install_options => ['-y', '--allow-empty-checksums'],
