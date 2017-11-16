@@ -56,8 +56,8 @@ class netkit2 {
 	}
 	# O netkit2 possui um bug que o impede se atualizar. Para corrigi-lo, deve-se atualiza-lo manualmente com este procedimento
 	exec { 'atualizacao_netkit2':
-		command => '/usr/bin/wget -O ${NETKIT2_HOME}/bin/netkit2 http://tele.sj.ifsc.edu.br/~msobral/netkit2/bin/netkit2 ; /usr/bin/touch /usr/local/netkit2/atualizacao2.x',
-		creates => '/usr/local/netkit2/atualizacao2.x',
+		command => '/usr/bin/wget -O ${NETKIT2_HOME}/bin/netkit2 http://tele.sj.ifsc.edu.br/~msobral/netkit2/bin/netkit2 ; /usr/bin/touch /usr/local/netkit2/atualizacao2.1 ; /bin/rm /usr/local/netkit2/atualizacao2.x',
+		creates => '/usr/local/netkit2/atualizacao2.1',
 	}
 
 }
