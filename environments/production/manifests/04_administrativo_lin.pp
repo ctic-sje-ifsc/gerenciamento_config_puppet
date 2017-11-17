@@ -444,10 +444,6 @@ node /^sj-lin-reg/ {
 	include remoto_isaacdesktop
 	include imp_padrao
 	include openjdk-7u111
-	exec { "install_font_garamond":
-		command => "/usr/bin/wget -P /usr/share/fonts/ -A ttf -r -np -nd http://garamond.org/urw/ ; /usr/bin/mkfontdir /usr/share/fonts/; /usr/bin/fc-cache -f ; /usr/bin/touch /var/gatilho_add_font_garamond",
-		creates => '/var/gatilho_add_font_garamond';
-	}
 }
 
 #Patrimonio

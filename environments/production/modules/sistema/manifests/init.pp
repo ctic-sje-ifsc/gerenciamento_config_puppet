@@ -160,4 +160,28 @@ if $lsbdistcodename == jessie {
         ensure => latest,
     }
 
+## fonte Garamound - registro
+
+	file { '/usr/share/fonts/GARA.TTF':
+         ensure => file,
+         source => 'puppet:///modules/sistema/GARA.TTF',
+         owner => root,
+         group => root,
+         mode => 0644,
+    }
+
+	file { '/usr/share/fonts/GARABD.TTF':
+         ensure => file,
+         source => 'puppet:///modules/sistema/GARABD.TTF',
+         owner => root,
+         group => root,
+         mode => 0644,
+    }
+	file { '/usr/share/fonts/GARAIT.TTF':
+         ensure => file,
+         source => 'puppet:///modules/sistema/GARAIT.TTF',
+         owner => root,
+         group => root,
+         mode => 0644,
+    }	
 }
