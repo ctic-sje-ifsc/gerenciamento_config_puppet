@@ -372,6 +372,15 @@ node /^sj-lin-vconf/ {
 }
 
 ########################## Financeiro e COMAF
+node /^sj-lin-comaf-38143/ {
+  include progsadm
+	include ingressa_ldap
+	include rclocal_adm
+	include ntp
+	include grub_save
+	include openjdk-7u111
+}
+
 node /^sj-lin-comaf/ {
   include progsadm
 	include ingressa_ldap
@@ -554,4 +563,27 @@ node /^sj-lin-admbkp/ {
 		include rclocal_adm
 		include grub_lab_lin
 		include openjdk-7u111
+}
+########################## Representacao estudantil
+node /^sj-lin-gremio/ {
+	include progsadm
+	include rclocal_adm
+	include grub_soh_lin
+	include openjdk-7u111
+	include ntp
+	exec { 'configura_gnome_classic_default':
+		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
+		creates => '/var/gatilho_config_default_gnome_classic',
+	}
+}
+node /^sj-lin-calq/ {
+	include progsadm
+	include rclocal_adm
+	include grub_soh_lin
+	include openjdk-7u111
+	include ntp
+	exec { 'configura_gnome_classic_default':
+		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
+		creates => '/var/gatilho_config_default_gnome_classic',
+	}
 }

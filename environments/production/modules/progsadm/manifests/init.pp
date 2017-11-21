@@ -102,6 +102,14 @@ if $lsbdistcodename == jessie {
 			mode => 0644,
 	}
 
+	file { 'dhclient.conf':
+			path => '/etc/dhcp/dhclient.conf',
+			ensure => file,
+			source => 'puppet:///modules/progsadm/dhclient.conf',
+			owner => root,
+			group => root,
+			mode => 0644,
+	}	
 
 	include x11vnc
 	include owncloud
