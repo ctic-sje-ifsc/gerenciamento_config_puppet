@@ -1,24 +1,22 @@
 class progsadm {
 
 	#Programas basicos adm
-	$list = [ "vlc", "unrar", "ssh", "ntfs-3g", "okular", "pdfsam", "libreoffice-l10n-pt-br", "libreoffice-help-pt-br", "libreoffice-gtk", "pepperflashplugin-nonfree", "vim", "ttf-mscorefonts-installer", "aptitude", "libreoffice", "remmina", "dia", "inkscape", "gimp", "xournal", "pinta", "gpaint", "gnome-paint", "kolourpaint4", "kde-l10n-ptbr", "kdenlive"]
-  #"deb-multimedia-keyring" tirei, nao sei porque colocamos, quando aparecer colocamos novamente
-	$chromium = $operatingsystem ? {
-      ubuntu  => 'chromium-browser',
-	    debian => 'chromium',
-	}
-	$chromium_l10n = $operatingsystem ? {
-        ubuntu  => 'chromium-browser-l10n',
-        debian => 'chromium-l10n',
-    }
-
+	$list = [ "vlc", "unrar", "ssh", "ntfs-3g", "okular", "pdfsam", "libreoffice-l10n-pt-br", "libreoffice-help-pt-br", "libreoffice-gtk", "pepperflashplugin-nonfree", "vim", "ttf-mscorefonts-installer", "aptitude", "libreoffice", "remmina", "dia", "inkscape", "gimp", "xournal", "pinta", "gpaint", "gnome-paint", "kolourpaint4", "kde-l10n-ptbr", "kdenlive", "xul-ext-adblock-plus"]
+  		#"deb-multimedia-keyring" tirei, nao sei porque colocamos, quando aparecer colocamos novamente
+		$chromium = $operatingsystem ? {
+      		ubuntu  => 'chromium-browser',
+	    	debian => 'chromium',
+		}
+		$chromium_l10n = $operatingsystem ? {
+        	ubuntu  => 'chromium-browser-l10n',
+        	debian => 'chromium-l10n',
+    	}
 		$flash = $operatingsystem ? {
 			ubuntu  => 'flashplugin-installer',
 			debian  => 'browser-plugin-freshplayer-pepperflash',
 		}
-
-	 package { $flash:
-      ensure => latest,
+	 	package { $flash:
+      	ensure => latest,
     }
 	##install skype
 	file { 'source_skype':
@@ -43,10 +41,10 @@ class progsadm {
 		],
 	}
 
-###define programas padroes para abrir determinados arquivos
+	###define programas padroes para abrir determinados arquivos
 
-if $lsbdistcodename == jessie {
-	file { 'defaults.list':
+	if $lsbdistcodename == jessie {
+		file { 'defaults.list':
 			path => '/etc/gnome/defaults.list',
 			ensure => file,
 			source => 'puppet:///modules/progsadm/defaults.list',
@@ -62,7 +60,7 @@ if $lsbdistcodename == jessie {
 			group => root,
 			mode => 0755,
 	}
-}
+	}
 ###
 
 
@@ -109,7 +107,7 @@ if $lsbdistcodename == jessie {
 			owner => root,
 			group => root,
 			mode => 0644,
-	}	
+	}
 
 	include x11vnc
 	include owncloud
