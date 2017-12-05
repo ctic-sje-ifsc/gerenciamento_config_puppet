@@ -156,6 +156,7 @@ node "win7-64-pc.sj.ifsc.edu.br" {
 ##DEBIAN 8
 node "sj-lin-imgdeb8.sj.ifsc.edu.br" {
 #		include banco
+#		include tracker
 }
 ##UBUNTU MATE
 node "aluno-VirtualBox.sj.ifsc.edu.br" {
