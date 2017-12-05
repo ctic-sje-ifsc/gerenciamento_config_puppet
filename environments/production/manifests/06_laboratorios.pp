@@ -645,6 +645,7 @@ node /^sj-labbib-/ {
 		include apagaaluno_ltsp
 		include atalhos_e_icones
 		include netbeans_8_2
+		include tracker
 	}
 	########################################## FIM LABALUNOS #################################################
 
