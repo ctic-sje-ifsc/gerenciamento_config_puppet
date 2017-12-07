@@ -31,6 +31,7 @@ node /^sj-labprog-38111/ {
 	include ingressa_ldap
 	include netbeans_8_2
 	include atualiza_mac
+	include foxit
 	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -160,6 +161,7 @@ node "sj-redes1-d1.sj.ifsc.edu.br" {
 	include atualiza_mac
 	include netbeans_8_2
 	include packettracer7
+	include tracker
 	#include final_semestre
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -536,6 +538,7 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include netbeans_8_2
 	include packettracer7
 	include android_studio3
+	include foxit
 	#include atualiza_mac
 	#include final_semestre
 	file { 'permissao_vmdk':
