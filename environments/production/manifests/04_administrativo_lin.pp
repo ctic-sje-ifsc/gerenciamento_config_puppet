@@ -514,7 +514,7 @@ node /^sj-lin-almoxrac-/ {
 	include ingressa_ldap
 	include ntp
 	include rclocal_adm
-	include grub_lab_win
+	include grub_adm_win
 	include openjdk-7u111
 }
 
