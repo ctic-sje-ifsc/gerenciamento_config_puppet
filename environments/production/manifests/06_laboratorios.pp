@@ -680,7 +680,7 @@ node /^sj-lin-labvoz/ {
 	include ingressa_ldap
 	include senhaaluno
 	include rclocal
-	include apagaaluno
+#   include apagaaluno
 	include chave_compartilhada
 }
 #windows

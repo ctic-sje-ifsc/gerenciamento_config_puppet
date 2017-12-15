@@ -12,6 +12,17 @@ class sistema {
 		default	=> undef,
 	}
 
+	if $lsbdistcodename == trusty {
+		file { 'extra-ppas.list':
+        path => '/etc/apt/sources.list.d/extra-ppas.list',
+        ensure => file,
+        source => 'puppet:///modules/sistema/extra-ppas.list',
+        owner => root,
+        group => root,
+        mode => 0644,
+    	}
+	}	
+
 	file { 'sources.list':
 		path => '/etc/apt/sources.list',
 		ensure => file,
@@ -146,7 +157,7 @@ if $lsbdistcodename == jessie {
 		}
 	}
 
-## auto completar terminar
+## auto completar terminal
 
     file { '/etc/bash.bashrc':
         ensure => file,

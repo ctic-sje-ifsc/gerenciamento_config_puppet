@@ -242,12 +242,7 @@ node /^sj-alrac-/ {
 	include sistema_win
 	include ingressa_ldap
 	include ntp
-  ## Pedido pelo Geraldo
-  package { 'foxitreader':
-    ensure   => latest,
-    install_options => ['-y', '--allow-empty-checksums'],
-    provider => 'chocolatey',
-  }
+  include foxit
 }
 
 node /^sj-img_win7/ {

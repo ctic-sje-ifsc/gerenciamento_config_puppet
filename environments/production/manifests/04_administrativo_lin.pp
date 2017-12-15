@@ -373,7 +373,7 @@ node /^sj-lin-vconf/ {
 
 ########################## Financeiro e COMAF
 node /^sj-lin-comaf-38143/ {
-  include progsadm
+    include progsadm
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
@@ -382,7 +382,7 @@ node /^sj-lin-comaf-38143/ {
 }
 
 node /^sj-lin-comaf/ {
-  include progsadm
+    include progsadm
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
@@ -509,13 +509,14 @@ node /^sj-lin-ctic/ {
 		include packettracer7
 		include openjdk-7u111
 }
-node /^sj-lin-almoxrac-/ {
+node /^sj-lin-almoxrac/ {
 	include progsadm
 	include ingressa_ldap
 	include ntp
 	include rclocal_adm
-	include grub_adm_win
+	include grub_save
 	include openjdk-7u111
+	include foxit
 }
 
 ########################## Transporte
@@ -528,7 +529,7 @@ node /^sj-lin-transp/ {
 }
 
 ########################## Telefonista
-node /^sj-lin-telef-/ {
+node /^sj-lin-telef/ {
 	include progsadm
 	include ingressa_ldap
 	include ntp

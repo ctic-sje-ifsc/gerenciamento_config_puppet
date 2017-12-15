@@ -66,6 +66,11 @@ package { 'libreoffice-oldstable':
 #  install_options => ['-y', '--allow-empty-checksums'],
 #  provider => 'chocolatey',
 #}
+package { 'pdfsam':
+  ensure   => latest,
+  install_options => ['-y', '--allow-empty-checksums'],
+  provider => 'chocolatey',
+}
 package { 'cutepdf':
   ensure   => latest,
   install_options => ['-y', '--allow-empty-checksums'],

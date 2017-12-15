@@ -1,7 +1,7 @@
 class progsadm {
 
 	#Programas basicos adm
-	$list = [ "vlc", "unrar", "ssh", "ntfs-3g", "okular", "pdfsam", "libreoffice-l10n-pt-br", "libreoffice-help-pt-br", "libreoffice-gtk", "pepperflashplugin-nonfree", "vim", "ttf-mscorefonts-installer", "aptitude", "libreoffice", "remmina", "dia", "inkscape", "gimp", "xournal", "pinta", "gpaint", "gnome-paint", "kolourpaint4", "kde-l10n-ptbr", "kdenlive", "xul-ext-adblock-plus"]
+	$list = [ "vlc", "unrar", "ssh", "ntfs-3g", "okular", "pdfsam", "libreoffice-l10n-pt-br", "libreoffice-help-pt-br", "libreoffice-gtk", "pepperflashplugin-nonfree", "vim", "ttf-mscorefonts-installer", "aptitude", "libreoffice", "remmina", "dia", "inkscape", "gimp", "xournal", "pinta", "gpaint", "gnome-paint", "kolourpaint4", "kde-l10n-ptbr", "kdenlive"]
   		#"deb-multimedia-keyring" tirei, nao sei porque colocamos, quando aparecer colocamos novamente
 		$chromium = $operatingsystem ? {
       		ubuntu  => 'chromium-browser',
