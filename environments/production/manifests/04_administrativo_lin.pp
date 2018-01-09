@@ -11,11 +11,13 @@ node /^sj-lin-manut/ {
 	include ingressa_ldap
 	include rclocal_adm
 	include grub_adm_win
+	include dhcp_auto
 }
 ########################## Laboratorio de prototipagem
 node /^sj-lin-labprot/ {
 	include progsadm
 	include rclocal_adm
+	include dhcp_auto
 }
 ########################## Educacao Fisica
 node /^sj-lin-edfis/ {
@@ -25,6 +27,7 @@ node /^sj-lin-edfis/ {
 	include remoto_sapafjovem
 	include remoto_sapafadulto
 	include openjdk-7u111
+	include dhcp_auto
 }
 node /^sj-lin-note-edifis/ {
 	include progsadm
@@ -40,6 +43,7 @@ node /^sj-lin-bio/ {
 	include ingressa_ldap
 	include rclocal_adm
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Pesquisa e extensao
 node /^sj-lin-dire-37245/ {
@@ -48,6 +52,7 @@ node /^sj-lin-dire-37245/ {
 	include rclocal_adm
 	include grub_adm_win
 	include openjdk-7u111
+	include dhcp_auto
 	###OBS modificado apenas o grub###
 }
 
@@ -65,6 +70,7 @@ node /^sj-lin-audvis/ {
 	include rclocal_adm
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 # mudar nome
 node "sj-pesq-29734.sj.ifsc.edu.br" {
@@ -81,6 +87,7 @@ node /sj-lin-dire/ {
 	include grub_lab_lin
 	include imp_padrao
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Biblioteca
 node /sj-lin-biblio/ {
@@ -109,6 +116,7 @@ node /sj-lin-repro/ {
 	include rclocal_adm
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## Desenvolvimento 1
@@ -124,6 +132,7 @@ node /^sj-lin-des1/ {
 	include x11vnc
 	include dropbox
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Desenvolvimento 2
 node /^sj-lin-des2/ {
@@ -139,6 +148,7 @@ node /^sj-lin-des2/ {
 	include grub_save
 	include x11vnc
 	include openjdk-7u111
+	include dhcp_auto
 }
 node "sj-lin-des2-744933.sj.ifsc.edu.br" {
 	include sistema
@@ -148,6 +158,7 @@ node "sj-lin-des2-744933.sj.ifsc.edu.br" {
 	include eclipsemodificado
 	include netbeans_8_2
 	include packettracer7
+	include dhcp_auto
 }
 ########################## Meios de Telecomunicacoes
 node /^sj-lin-mtele/ {
@@ -164,6 +175,7 @@ node /^sj-lin-mtele/ {
 	include x11vnc
 	include openjdk-7u111
 	include grub_save
+	include dhcp_auto
 }
 
 node "sj-lin-mtele-744527.sj.ifsc.edu.br" {
@@ -179,6 +191,7 @@ node "sj-lin-mtele-744527.sj.ifsc.edu.br" {
 		ensure => latest,
 	}
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## Coord TELE
@@ -194,6 +207,7 @@ node /sj-lin-cotel/ {
 	include rclocal
 	include chave_compartilhada
 	include ingressa_ldap
+	include dhcp_auto
 }
 node "sj-lin-cotel-38112.sj.ifsc.edu.br" {
 	include sistema
@@ -203,12 +217,13 @@ node "sj-lin-cotel-38112.sj.ifsc.edu.br" {
 	include eclipsemodificado
 	include netbeans_8_2
 	include packettracer7
+	include dhcp_auto
 }
 
 
 #feito dia 19-02-2016
 ########################## Computadores almoxarifado
-node /^sj-lin-almox/ {
+node /^sj-lin-almox-/ {
 	include progsadm
 	include ingressa_ldap
 	include rclocal_adm
@@ -216,6 +231,7 @@ node /^sj-lin-almox/ {
 	include remoto_sam
 	include irpf_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## Computadores almoxarifado de tele
@@ -229,6 +245,7 @@ node /^sj-lin-almtele/ {
 		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
 		creates => '/var/gatilho_config_default_gnome_classic',
 	}
+	include dhcp_auto
 
 }
 ########################## Suporte Educacional
@@ -240,6 +257,7 @@ node /^sj-lin-supedu-/ {
 	include rclocal_adm
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## Turno
@@ -255,6 +273,7 @@ node /^sj-lin-cotur/ {
 	include ntp
 	include rclocal_adm
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 
@@ -265,6 +284,7 @@ node "sj-geden-29743.sj.ifsc.edu.br" {
 	include ntp
 	include rclocal_adm
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## nova maquina simone 02/03/2016
@@ -278,6 +298,7 @@ node /^sj-lin-geden/ {
 	include remoto_sapafjovem
 	include remoto_sapafadulto
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Centro academico
 node /^sj-cat-/ {
@@ -286,24 +307,27 @@ node /^sj-cat-/ {
 	include ntp
 	include rclocal_adm
 	include grub_soh_lin
+	include dhcp_auto
 }
 ########################## Lab. Fisica
 node /^sj-lin-fis/ {
 	include progsadm
-  include ingressa_ldap
-  include ntp
-  include rclocal_adm
-  include grub_lab_lin
+    include ingressa_ldap
+    include ntp
+    include rclocal_adm
+    include grub_lab_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Lab. Quimica
 node /^sj-lin-labquimica/ {
 	include progsadm
-  include ingressa_ldap
-  include ntp
-  include rclocal_adm
-  include grub_lab_win
+    include ingressa_ldap
+    include ntp
+    include rclocal_adm
+    include grub_lab_win
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Meios RAC
 node /^sj-lin-meiosrac/ {
@@ -312,6 +336,7 @@ node /^sj-lin-meiosrac/ {
 		include rclocal_adm
 		include grub_lab_win
 		include openjdk-7u111
+		include dhcp_auto
 }
 ########################## Coordenacao RAC
 node /^sj-lin-corac/ {
@@ -320,6 +345,7 @@ node /^sj-lin-corac/ {
 		include rclocal_adm
 		include grub_adm_win
 		include openjdk-7u111
+		include dhcp_auto
 }
 ########################## Coordenacao GERAC
 node /^sj-lin-gerac/ {
@@ -328,6 +354,7 @@ node /^sj-lin-gerac/ {
 		include rclocal_adm
 		include grub_adm_win
 		include openjdk-7u111
+		include dhcp_auto
 }
 ########################## Meios Cultura Geral
 node /^sj-lin-mcul/ {
@@ -339,6 +366,7 @@ node /^sj-lin-mcul/ {
 		include openjdk-7u111
 		include cmap_tools
 		include qgis
+		include dhcp_auto
 }
 ########################## Mini auditorio
 node /^sj-lin-maud/ {
@@ -348,6 +376,7 @@ node /^sj-lin-maud/ {
 	include ntp
 	include grub_lab_win
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Auditorio
 node /^sj-lin-aud/ {
@@ -357,6 +386,7 @@ node /^sj-lin-aud/ {
 	include ntp
 	include grub_adm_win
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## Video Conferencia - Ubuntu Mate
 node /^sj-lin-vconf/ {
@@ -379,6 +409,7 @@ node /^sj-lin-comaf-38143/ {
 	include ntp
 	include grub_save
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 node /^sj-lin-comaf/ {
@@ -388,6 +419,7 @@ node /^sj-lin-comaf/ {
 	include ntp
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## COGER
 node /^sj-lin-coger/ {
@@ -397,6 +429,7 @@ node /^sj-lin-coger/ {
 	include ntp
 	include grub_lab_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 #########################SECRETaria
 node /^sj-lin-secret/ {
@@ -409,6 +442,7 @@ node /^sj-lin-secret/ {
 	include remoto_asctime
 	include google_chrome
 	include openjdk-7u111
+	include dhcp_auto
 }
 ########################## CGP
 node /^sj-lin-cgp/ {
@@ -425,6 +459,7 @@ node /^sj-lin-cgp/ {
 	package { $list6:
 		ensure => latest,
 	}
+	include dhcp_auto
 }
 ########################## DAM
 node /^sj-lin-dam/ {
@@ -434,6 +469,7 @@ node /^sj-lin-dam/ {
 	include ntp
 	include grub_lab_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 node "sj-lin-reg-humberto.sj.ifsc.edu.br" {
@@ -453,6 +489,7 @@ node /^sj-lin-reg/ {
 	include remoto_isaacdesktop
 	include imp_padrao
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 #Patrimonio
@@ -463,6 +500,7 @@ node /^sj-lin-pat/ {
 	include ntp
 	include grub_lab_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ##Setor saude
@@ -473,6 +511,7 @@ node /^sj-lin-saude-/ {
 	include rclocal_adm
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ##PC portaria
@@ -487,6 +526,7 @@ node /^sj-lin-port-/ {
 		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
 		creates => '/var/gatilho_config_default_gnome_classic',
 	}
+	include dhcp_auto
 }
 
 
@@ -498,6 +538,7 @@ node /^sj-lin-memoria/ {
 		include rclocal_adm
 		include grub_soh_lin
 		include openjdk-7u111
+		include dhcp_auto
 }
 
 node /^sj-lin-ctic/ {
@@ -508,6 +549,7 @@ node /^sj-lin-ctic/ {
 		include ntp
 		include packettracer7
 		include openjdk-7u111
+		include dhcp_auto
 }
 node /^sj-lin-almoxrac/ {
 	include progsadm
@@ -517,6 +559,7 @@ node /^sj-lin-almoxrac/ {
 	include grub_save
 	include openjdk-7u111
 	include foxit
+	include dhcp_auto
 }
 
 ########################## Transporte
@@ -526,17 +569,9 @@ node /^sj-lin-transp/ {
 	include rclocal_adm
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
-########################## Telefonista
-node /^sj-lin-telef/ {
-	include progsadm
-	include ingressa_ldap
-	include ntp
-	include rclocal_adm
-	include grub_soh_lin
-	include openjdk-7u111
-}
 
 ########################## EmpresaJunior e Hotel Tecnologico
 node /^sj-lin-hotel/ {
@@ -545,6 +580,7 @@ node /^sj-lin-hotel/ {
 	include ntp
 	include rclocal_adm
 	include grub_soh_lin
+	include dhcp_auto
 }
 
 ########################## DEPE
@@ -555,6 +591,7 @@ node /^sj-lin-depe/ {
 	include ntp
 	include grub_soh_lin
 	include openjdk-7u111
+	include dhcp_auto
 }
 
 ########################## Backup ADM
@@ -564,6 +601,7 @@ node /^sj-lin-admbkp/ {
 		include rclocal_adm
 		include grub_lab_lin
 		include openjdk-7u111
+		include dhcp_auto
 }
 ########################## Representacao estudantil
 node /^sj-lin-gremio/ {
@@ -576,6 +614,7 @@ node /^sj-lin-gremio/ {
 		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
 		creates => '/var/gatilho_config_default_gnome_classic',
 	}
+	include dhcp_auto
 }
 node /^sj-lin-calq/ {
 	include progsadm
@@ -587,4 +626,5 @@ node /^sj-lin-calq/ {
 		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
 		creates => '/var/gatilho_config_default_gnome_classic',
 	}
+	include dhcp_auto
 }

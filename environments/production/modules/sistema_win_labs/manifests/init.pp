@@ -41,7 +41,7 @@ package { 'vlc':
   provider => 'chocolatey',
 }
 package { 'unity':
-  ensure   => latest,
+  ensure   => '2017.3.0',
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
@@ -50,11 +50,12 @@ package { 'libreoffice':
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
-package { 'libreoffice-help':
-  ensure   => latest,
-  install_options => ['-y', '--allow-empty-checksums'],
-  provider => 'chocolatey',
-}
+#Link quebrado versao 5.2.0 
+#package { 'libreoffice-help':
+#  ensure   => latest,
+#  install_options => ['-y', '--allow-empty-checksums'],
+#  provider => 'chocolatey',
+#}
 package { 'cutepdf':
   ensure   => latest,
   install_options => ['-y', '--allow-empty-checksums'],
@@ -70,16 +71,16 @@ package { 'geogebra':
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
-package { 'arduino':
-  ensure   => latest,
-  install_options => ['-y', '--allow-empty-checksums'],
-  provider => 'chocolatey',
-}
-package { 'virtualbox':
-  ensure   => latest,
-  install_options => ['-y', '--allow-empty-checksums'],
-  provider => 'chocolatey',
-}
+#package { 'arduino':
+#  ensure   => latest,
+#  install_options => ['-y', '--allow-empty-checksums'],
+#  provider => 'chocolatey',
+#}
+#package { 'virtualbox':
+#  ensure   => latest,
+#  install_options => ['-y', '--allow-empty-checksums'],
+#  provider => 'chocolatey',
+#}
 package { 'italc':
   ensure   => latest,
   install_options => ['-y', '--allow-empty-checksums'],
@@ -101,7 +102,7 @@ package { 'librecad':
   provider => 'chocolatey',
 }
 package { 'freecad':
-  ensure   => '0.15.4671',
+  ensure   => latest,
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
