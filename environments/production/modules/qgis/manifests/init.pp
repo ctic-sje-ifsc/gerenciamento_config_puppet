@@ -7,6 +7,7 @@ class qgis {
 				Exec ['apt-get-update_qgis'],
 				Exec ['add_key_qgis'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 	package { 'python-qgis':
 		ensure => latest,
@@ -15,6 +16,7 @@ class qgis {
 				Exec ['apt-get-update_qgis'],
 				Exec ['add_key_qgis'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 	package { 'qgis-plugin-grass':
 		ensure => latest,
@@ -23,6 +25,7 @@ class qgis {
 				Exec ['apt-get-update_qgis'],
 				Exec ['add_key_qgis'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 
 	$source = $lsbdistcodename ? {
@@ -41,7 +44,7 @@ class qgis {
 
 	exec { 'add_key_qgis':
 		command => "/usr/bin/apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 073D307A618E5811 ; /usr/bin/touch /var/gatinho_key_qgis",
-	creates => "/var/gatinho_key_qgis";
+		creates => "/var/gatinho_key_qgis";
 	}
 	exec { 'apt-get-update_qgis':
 		command => "/usr/bin/apt-get update",

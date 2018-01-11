@@ -79,6 +79,7 @@ class java_oracle {
 				Exec['add_key_oracle_java'],
 				Exec['license_acc'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 
 }

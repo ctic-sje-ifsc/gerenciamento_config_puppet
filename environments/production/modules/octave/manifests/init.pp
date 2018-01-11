@@ -7,6 +7,7 @@ class octave {
 				Exec['apt-get-update_octave'],
 				Exec['add_key_octave'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 	package { 'liboctave-dev':
 		ensure => latest,
@@ -16,6 +17,7 @@ class octave {
 				exec ['apt-get-update_octave'],
 				exec ['add_key_octave'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 
 	$list_octave = [ "octave-communications", "octave-control", "octave-signal" ]
@@ -27,6 +29,7 @@ class octave {
 				exec ['apt-get-update_octave'],
 				exec ['add_key_octave'],
 		],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 
 	$source = $lsbdistcodename ? {
