@@ -20,7 +20,7 @@ if $::kernel == windows {
 	exec { 'dominio':
 	#	require => Exec ["dnswins"],
 		require => Exec ["registro"],
-		command => '$password="b0ls40" | ConvertTo-SecureString -asPlainText -Force; $username="CEFETSC\bolctic.sj"; $credential=New-Object System.Management.Automation.PSCredential($username,$password); Add-Computer -DomainName "CEFETSC" -Credential $credential ; New-Item c:\gatilho_dominio3.txt -type file',
+		command => '$password="l4yz4123" | ConvertTo-SecureString -asPlainText -Force; $username="CEFETSC\bolctic.sje"; $credential=New-Object System.Management.Automation.PSCredential($username,$password); Add-Computer -DomainName "CEFETSC" -Credential $credential ; New-Item c:\gatilho_dominio3.txt -type file',
 		#-ErrorAction SilentlyContinue -ArgumentList "/s, /v\'"/qn\'"" -wait
 		provider => powershell,
 		creates => 'c:\gatilho_dominio3.txt',
