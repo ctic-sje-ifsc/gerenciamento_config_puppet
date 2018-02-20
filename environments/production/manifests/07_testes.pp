@@ -145,7 +145,8 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 #		include irpf_win
 #		include winscp5
 #		include limpa_windows
-#   include progisp
+   include renomeia_regsvr32
+#		include auto_desligamento
 }
 ##WINDOWS 64bits
 node "win7-64-pc.sj.ifsc.edu.br" {

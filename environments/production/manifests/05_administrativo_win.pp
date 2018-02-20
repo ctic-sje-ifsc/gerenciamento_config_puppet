@@ -219,6 +219,7 @@ node /^sj-coger/ {
 	include sistema_win
 	include ingressa_ldap
 	include ntp
+  include sketchup
 }
 ########################## CGP
 node /^sj-cgp/ {

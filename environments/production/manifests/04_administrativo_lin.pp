@@ -287,7 +287,7 @@ node "sj-geden-29743.sj.ifsc.edu.br" {
 	include dhcp_auto
 }
 
-########################## nova maquina simone 02/03/2016
+########################## 
 node /^sj-lin-geden/ {
 	include progsadm
 	include ingressa_ldap

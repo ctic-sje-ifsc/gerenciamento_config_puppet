@@ -32,8 +32,8 @@ class dropbox {
 	package { 'dropbox':
 	  name => dropbox,
 		ensure => latest,
-	  require => File ['sources.list.dropbox'],
-	#	install_options => ['-y, --force-yes'],
+	  	require => File ['sources.list.dropbox'],
+		install_options => ['--allow-unauthenticated', '-y', '--force-yes'],
 	}
 	#package { 'nautilus':
 	#  ensure => latest,
