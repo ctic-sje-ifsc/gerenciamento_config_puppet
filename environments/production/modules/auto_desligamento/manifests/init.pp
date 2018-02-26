@@ -19,16 +19,16 @@ if $::kernel == windows {
   }
 
   }else{
-
+    ## AINDA NAO AUTORIZADO PELO DIRETOR
 		#############################################################
 		########################### LINUX ###########################
 		#############################################################
-    cron { 'poweroff':
-      command => '/sbin/poweroff',
-      user    => 'root',
-      hour    => 23,
-      minute  => 00,
-      ensure => present,
+    #3cron { 'poweroff':
+    #3  command => '/sbin/poweroff',
+    #3  user    => 'root',
+    #3  hour    => 23,
+    #3  minute  => 00,
+    #3  ensure => present,
     }
 
 	}

@@ -50,7 +50,7 @@ package { 'libreoffice':
   install_options => ['-y', '--allow-empty-checksums'],
   provider => 'chocolatey',
 }
-#Link quebrado versao 5.2.0 
+#Link quebrado versao 5.2.0
 #package { 'libreoffice-help':
 #  ensure   => latest,
 #  install_options => ['-y', '--allow-empty-checksums'],
@@ -148,6 +148,9 @@ exec { 'muda_permissao_multisim':
       command => '$Acl= Get-Acl "C:\Msmdemo" ; $Ar = New-Object  system.security.accesscontrol.filesystemaccessrule("aluno","FullControl", "ContainerInherit,ObjectInherit", "None","Allow") ; $Acl.SetAccessRule($Ar) ; Set-Acl "C:\Msmdemo" $Acl',
       provider => powershell,
 }
+
+############# Includes #############
 include limpa_windows
 include mmanagal
+include auto_desligamento
 }

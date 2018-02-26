@@ -1,14 +1,9 @@
 class sistema_win {
 
-
-#Modulo para acesso remoto nas maquinas
-include ultravnc_win
-
 package { 'chocolatey':
   ensure   => latest,
   provider => 'chocolatey',
 }
-
 package { 'zabbix-agent':
   ensure   => latest,
   install_options => ['-y', '--allow-empty-checksums'],
@@ -107,5 +102,12 @@ file { 'puppet.conf':
   source_permissions => ignore,
 }
 
+
+############# Includes #############
+#Modulo para acesso remoto nas maquinas
+include ultravnc_win
+
+#Modulo para desligar o Computador
+include auto_desligamento
 
 }
