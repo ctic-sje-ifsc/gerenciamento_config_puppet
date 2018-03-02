@@ -142,7 +142,7 @@ node /^sj-apoio/ {
 ########################################## INICIO LAB REDES1 #################################################
 
 ##professor
-node "sj-redes1-d1.sj.ifsc.edu.br" {
+node "sj-redes1-744530.sj.ifsc.edu.br" {
 	include sistema
 	include config_rede_labs
 	include grub_soh_lin
@@ -171,8 +171,16 @@ node "sj-redes1-d1.sj.ifsc.edu.br" {
  		group => 'Domain Users',
 		mode => 0660,
   }
+  file { 'configura_monitor':
+	  path => '/etc/profile.d/configura_monitor.sh',
+	  ensure => file,
+	  source => 'puppet:///modules/progpadroeslabs/configura_monitor_redes1.sh',
+	  owner => root,
+      group => root,
+	  mode => 0777,
+
+  }
 }
-##
 
 ##ALUNOS
 ##node /^sj-redes1-[d-e][2-9]/ {
@@ -201,6 +209,92 @@ node /^sj-redes1/ {
 ##
 ########################################## FIM LAB REDES1 #################################################
 #
+
+##
+
+########################################## INICIO DO REDES2 #################################################
+
+#windons professor
+node "sj-red2-703872.sj.ifsc.edu.br" {
+	include sistema_win_labs
+	include ingressa_ldap
+}
+
+#linux prof
+node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
+	include sistema
+	include config_rede_labs
+	include grub_lab_lin
+	include progpadroeslabs
+	include sshd_config
+	include sudoers
+	include arduino_1_6_6
+	include senhaaluno
+	include netkit2
+	include atalhos_e_icones
+	include eclipsemodificado
+	include rclocal
+	include epoptes
+	include chave_compartilhada
+	include ingressa_ldap
+	include netbeans_8_2
+	include packettracer7
+	include android_studio3
+	include foxit
+	##include atualiza_mac
+
+	file { 'permissao_vmdk':
+ 		path => '/home/VMDK/',
+ 		ensure => directory,
+ 		owner => aluno,
+		recurse => true,
+ 		group => 'Domain Users',
+		mode => 0660,
+  	}
+	file { 'configura_monitor':
+ 		path => '/etc/profile.d/configura_monitor.sh',
+ 		ensure => file,
+		source => 'puppet:///modules/progpadroeslabs/configura_monitor_redes2.sh',
+		owner => root,
+   	 	group => root,
+		mode => 0777,
+  	}
+}
+
+#windons aluno
+node /^sj-red2/ {
+	include sistema_win_labs
+}
+
+#linux aluno
+node /^sj-labredes2/ {
+	include sistema
+	include grub_lab_lin
+	include progpadroeslabs
+	include sshd_config
+	include sudoers
+	include arduino_1_6_6
+	include senhaaluno
+	include netkit2
+	include atalhos_e_icones
+	include eclipsemodificado
+	include rclocal
+	include epoptes-client
+	include apagaaluno
+	include chave_compartilhada
+	include disable_ipv6
+	include netbeans_8_2
+	include packettracer7
+	include android_studio3
+    ##include atualiza_mac
+
+}
+
+
+########################################## FIM REDES2 #################################################
+
+
+
 
 
 ########################################## LAB BKP #####################################################
@@ -509,87 +603,6 @@ node "sj-inf-756045.sj.ifsc.edu.br" {
 
 
 ########################################## FIM LAB INFORMATICA #################################################
-
-########################################## INICIO DO REDES2 #################################################
-
-#windons professor
-node "sj-red2-703872.sj.ifsc.edu.br" {
-	include sistema_win_labs
-	include ingressa_ldap
-}
-
-#linux prof
-node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
-	include sistema
-	include config_rede_labs
-	include grub_lab_lin
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes
-	include chave_compartilhada
-	include ingressa_ldap
-	include netbeans_8_2
-	include packettracer7
-	include android_studio3
-	include foxit
-	##include atualiza_mac
-
-	file { 'permissao_vmdk':
- 		path => '/home/VMDK/',
- 		ensure => directory,
- 		owner => aluno,
-		recurse => true,
- 		group => 'Domain Users',
-		mode => 0660,
-  	}
-	file { 'configura_monitor':
- 		path => '/etc/profile.d/configura_monitor.sh',
- 		ensure => file,
-		source => 'puppet:///modules/progpadroeslabs/configura_monitor_redes2.sh',
-		owner => root,
-   	 	group => root,
-		mode => 0777,
-  	}
-}
-
-#windons aluno
-node /^sj-red2/ {
-	include sistema_win_labs
-}
-
-#linux aluno
-node /^sj-labredes2/ {
-	include sistema
-	include grub_lab_lin
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes-client
-	include apagaaluno
-	include chave_compartilhada
-	include disable_ipv6
-	include netbeans_8_2
-	include packettracer7
-	include android_studio3
-    ##include atualiza_mac
-
-}
-
-
-########################################## FIM REDES2 #################################################
 
 
 ########################################## INICIO BILIOTECA #################################################

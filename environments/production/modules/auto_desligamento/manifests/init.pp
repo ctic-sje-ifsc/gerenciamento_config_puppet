@@ -29,7 +29,7 @@ if $::kernel == windows {
     #3  hour    => 23,
     #3  minute  => 00,
     #3  ensure => present,
-    }
+    #3}
 
 	}
 }

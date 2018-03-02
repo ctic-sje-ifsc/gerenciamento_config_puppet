@@ -8,9 +8,9 @@
 ########################## Manutencao
 node /^sj-lin-manut/ {
 	include progsadm
-	include ingressa_ldap
+	#include ingressa_ldap
 	include rclocal_adm
-	include grub_adm_win
+	include grub_lab_lin
 	include dhcp_auto
 }
 ########################## Laboratorio de prototipagem
@@ -287,7 +287,7 @@ node "sj-geden-29743.sj.ifsc.edu.br" {
 	include dhcp_auto
 }
 
-########################## 
+##########################
 node /^sj-lin-geden/ {
 	include progsadm
 	include ingressa_ldap
@@ -460,6 +460,7 @@ node /^sj-lin-cgp/ {
 		ensure => latest,
 	}
 	include dhcp_auto
+	include irpf_lin
 }
 ########################## DAM
 node /^sj-lin-dam/ {

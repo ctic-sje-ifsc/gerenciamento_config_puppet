@@ -16,8 +16,8 @@ class config_rede_labs {
 		"sj-labprog-38111": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.prog'}
 		"sj-apoio-38114.sj.ifsc.edu.br": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.apoio'}
 		"sj-apoio-38114": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.apoio'}
-		"sj-redes1-d1.sj.ifsc.edu.br": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes1'}
-		"sj-redes1-d1": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes1'}
+		"sj-redes1-744530.sj.ifsc.edu.br": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes1'}
+		"sj-redes1-744530": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes1'}
 		"sj-lin-redes2-703872.sj.ifsc.edu.br": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes2'}
 		"sj-lin-redes2-703872": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.redes2'}
 		"sj-lab-bkp-744521": {$interface = 'puppet:///modules/config_rede_labs/interfaces.prof.bkp'}
