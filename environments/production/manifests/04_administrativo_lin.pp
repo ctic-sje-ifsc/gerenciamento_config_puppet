@@ -403,7 +403,7 @@ node /^sj-lin-vconf/ {
 
 ########################## Financeiro e COMAF
 node /^sj-lin-comaf-38143/ {
-    include progsadm
+  include progsadm
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp
@@ -413,7 +413,7 @@ node /^sj-lin-comaf-38143/ {
 }
 
 node /^sj-lin-comaf/ {
-    include progsadm
+  include progsadm
 	include ingressa_ldap
 	include rclocal_adm
 	include ntp

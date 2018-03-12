@@ -155,7 +155,8 @@ node "win7-64-pc.sj.ifsc.edu.br" {
 
 ##DEBIAN 8
 node "sj-lin-imgdeb8.sj.ifsc.edu.br" {
-		include irpf_lin
+#		include ingressa_ldap
+#		include irpf_lin
 #		include banco
 #		include auto_desligamento
 }

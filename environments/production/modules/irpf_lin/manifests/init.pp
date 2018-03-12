@@ -28,4 +28,19 @@ class irpf_lin {
 		creates => '/usr/local/IRPF2018/irpf.jar',
 		timeout => 0,
  }
+# Removendo versao anterior
+ file { 'remove_.tgz':
+	 path => '/usr/local/src/irpf17.tgz',
+	 ensure => absent,
+ }
+ file { 'remove_.desktop':
+	 path => '/usr/share/applications/IRPF2017-desktop.desktop',
+	 ensure => absent,
+ }
+ file { 'remove_pasta':
+	 path => '/usr/local/IRPF2017',
+	 ensure => absent,
+	 recurse => true,
+	 force => true,
+ }
 }

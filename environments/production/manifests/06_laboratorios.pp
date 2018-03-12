@@ -696,12 +696,29 @@ node /^sj-lin-labvoz/ {
 #   include apagaaluno
 	include chave_compartilhada
 }
-#windows
+#Lab voz e imagem - windows
 node /^sj-labvo/ {
 	include sistema_win
 	#include ingressa_ldap
 }
 
+#Lab aplicada - linux
+node /^sj-lin-aplicada/ {
+	include grub_soh_lin
+	include progpadroeslabs
+	include sshd_config
+	include sudoers
+	include ingressa_ldap
+	include senhaaluno
+	include rclocal
+#   include apagaaluno
+	include chave_compartilhada
+}
+#Lab aplicada - windows
+node /^sj-aplica/ {
+	include sistema_win
+	include ingressa_ldap
+}
 
 #Lab Ciencias Humanas
 	#win
@@ -720,7 +737,30 @@ node /^sj-labvo/ {
 	}
 
 #Lab Meios de transmissao
-	#Linux e windows
+#Linux
+node /^sj-labmeios/{
+     include grub_lab_lin
+     include progpadroeslabs
+     include sshd_config
+     include sudoers
+     include ingressa_ldap
+     include senhaaluno
+     include rclocal
+ #   include apagaaluno
+     include chave_compartilhada
+
+ 	 file { 'configura_monitor':
+       path => '/etc/profile.d/configura_monitor.sh',
+       ensure => file,
+       source => 'puppet:///modules/progpadroeslabs/configura_monitor_meios.sh',
+       owner => root,
+       group => root,
+       mode => 0777,
+ 
+     }
+}
+
+#Windows
 node /^sj-meios/{
 		include sistema_win_labs
 		include ingressa_ldap
