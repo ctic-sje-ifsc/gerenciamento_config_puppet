@@ -105,7 +105,7 @@ class progpadroeslabs {
 
  ##INICIO DOS PROGRAMAS BASICOS
 if $lsbdistcodename == jessie {
- $list = [ "mcu8051ide", "ethtool", "minicom", "nmap", "vim", "gedit", "geany", "unrar", "ntfs-3g", "scratch", "latexila", "abntex", "eagle:i386", "texlive-lang-portuguese", "tree", "vlc", "pepperflashplugin-nonfree", "kicad", "gdb", "audacity", "gimp", "inkscape", "libreoffice", "libreoffice-l10n-pt-br", "kdenlive", "pitivi", "konsole", "g++-4.8", "kalzium", "git", "subversion", "traceroute", "lib32stdc++6", "libc6-dev-i386" ,"dia", "python3", "ipython3", "spyder3", "logisim", "okular", "gcc-avr", "gcc-arm-none-eabi", "x2goclient", "pinta", "avr-libc", "avrdude", "fritzing", "fritzing-data", "uuid-dev", "as31", "kile", "kile-l10n", "libswt-gtk-3-jni:i386", "ssh", "cutecom", "sqlite3", "glade", "libssl-dev", "libgtkmm-2.4-dev", "libgtkmm-3.0-dev", "libgtk-3-dev", "libglade2-dev", "libglademm-2.4-dev", "libpcre++-dev", "libboost-all-dev", "libsqlite3-dev", "libcurl4-openssl-dev", "libstdc++-4.8-dev", "libnl-3-dev", "libnl-genl-3-dev", "libdbus-1-dev", "libpcap-dev", "rabbitmq-server", "python-virtualenv", "u-boot-tools", "ipcalc", "wxmaxima", "kolourpaint4", "xournal", "iperf", "chrpath", "diffstat", "browser-plugin-freshplayer-pepperflash", "mysql-workbench", "mysql-client", "npm", "nodejs", "nodejs-legacy", "xpdf", "gnupg2", "mosquitto-clients", "fish", "r-base", "dnsutils", "whois", "resolvconf"]
+ $list = [ "mcu8051ide", "ethtool", "minicom", "nmap", "vim", "gedit", "geany", "unrar", "ntfs-3g", "scratch", "latexila", "abntex", "eagle:i386", "texlive-lang-portuguese", "tree", "vlc", "pepperflashplugin-nonfree", "kicad", "gdb", "audacity", "gimp", "inkscape", "libreoffice", "libreoffice-l10n-pt-br", "kdenlive", "pitivi", "konsole", "g++-4.8", "kalzium", "git", "subversion", "traceroute", "lib32stdc++6", "libc6-dev-i386" ,"dia", "python3", "ipython3", "spyder3", "logisim", "okular", "gcc-avr", "gcc-arm-none-eabi", "x2goclient", "pinta", "avr-libc", "avrdude", "fritzing", "fritzing-data", "uuid-dev", "as31", "kile", "kile-l10n", "libswt-gtk-3-jni:i386", "ssh", "cutecom", "sqlite3", "glade", "libssl-dev", "libgtkmm-2.4-dev", "libgtkmm-3.0-dev", "libgtk-3-dev", "libglade2-dev", "libglademm-2.4-dev", "libpcre++-dev", "libboost-all-dev", "libsqlite3-dev", "libcurl4-openssl-dev", "libstdc++-4.8-dev", "libnl-3-dev", "libnl-genl-3-dev", "libdbus-1-dev", "libpcap-dev", "rabbitmq-server", "python-virtualenv", "u-boot-tools", "ipcalc", "wxmaxima", "kolourpaint4", "xournal", "iperf", "chrpath", "diffstat", "browser-plugin-freshplayer-pepperflash", "mysql-workbench", "mysql-client", "npm", "nodejs", "nodejs-legacy", "xpdf", "gnupg2", "mosquitto-clients", "fish", "r-base", "dnsutils", "whois", "resolvconf", "ttf-ancient-fonts", "distcc", "distccmon-gnome"]
 
   file { 'libpepflashplayer.so':
      path => '/usr/lib/pepperflashplugin-nonfree/libpepflashplayer.so',
@@ -175,7 +175,7 @@ if $lsbdistcodename == jessie {
   package { 'wireshark':
     ensure => latest,
   }
-  
+
  ### corrige uso do wireshark como non-root
   exec { 'wireshark non-root':
     command => "/sbin/setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/bin/dumpcap",

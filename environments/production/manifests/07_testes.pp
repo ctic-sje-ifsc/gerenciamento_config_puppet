@@ -140,7 +140,7 @@ node "pc-sala.sj.ifsc.edu.br" {
 ################################## teste do Ricardo
 ##WINDOWS 32bits
 node "vrtual-PC.sj.ifsc.edu.br" {
-#		include ingressa_ldap
+		include ingressa_ldap
 #		include sair_ldap
 #		include irpf_win
 #		include winscp5
@@ -149,7 +149,7 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 }
 ##WINDOWS 64bits
 node "win7-64-pc.sj.ifsc.edu.br" {
-   include ultravnc_win
+#   include ultravnc_win
 #   include kdenlive17
 }
 
