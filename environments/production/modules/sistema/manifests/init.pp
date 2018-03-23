@@ -9,6 +9,8 @@ class sistema {
 		precise	=> 'puppet:///modules/sistema/sources.list.precise',
 		#Debian 8 Jessie
 		jessie => 'puppet:///modules/sistema/sources.list.jessie',
+		#Debian 9 Stretch
+		stretch => 'puppet:///modules/sistema/sources.list.stretch',
 		default	=> undef,
 	}
 
@@ -21,7 +23,7 @@ class sistema {
         group => root,
         mode => 0644,
     	}
-	}	
+	}
 
 	file { 'sources.list':
 		path => '/etc/apt/sources.list',
@@ -119,7 +121,7 @@ if $lsbdistcodename == jessie {
 		name => 'zabbix-agent',
 		ensure => latest,
 	}
-	
+
 	file { 'zabbix_agentd.conf':
 		path => '/etc/zabbix/zabbix_agentd.conf',
 		ensure => file,
@@ -194,5 +196,5 @@ if $lsbdistcodename == jessie {
          owner => root,
          group => root,
          mode => 0644,
-    }	
+    }
 }

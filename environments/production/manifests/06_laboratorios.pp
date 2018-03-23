@@ -110,6 +110,14 @@ node "sj-apoio-38114.sj.ifsc.edu.br" {
  		group => 'Domain Users',
 		mode => 0660,
   }
+#file { 'configura_monitor':
+#	path => '/etc/profile.d/configura_monitor.sh',
+#	ensure => file,
+#	source => 'puppet:///modules/progpadroeslabs/configura_monitor_meios.sh',
+#	owner => root,
+#		group => root,
+#	mode => 0777,
+#	}
 	include packettracer7
 }
 ##
@@ -756,7 +764,7 @@ node /^sj-labmeios/{
        owner => root,
        group => root,
        mode => 0777,
- 
+
      }
 }
 
