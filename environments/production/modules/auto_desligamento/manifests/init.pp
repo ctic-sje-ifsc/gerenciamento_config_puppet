@@ -5,10 +5,10 @@ if $::kernel == windows {
   ########################## WINDOWS ##########################
   #############################################################
   scheduled_task { 'Desligar_computador':
-  ensure    => present,
-  enabled   => true,
+  ensure    => absent,
+  enabled   => false,
   command   => 'C:\Windows\system32\shutdown.exe',
-  arguments => '-s -t 1',
+  arguments => '-s -f -t 0',
   trigger   => {
     schedule   => daily,
     start_time => '23:00',

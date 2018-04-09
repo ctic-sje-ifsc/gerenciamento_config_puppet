@@ -160,6 +160,13 @@ node "sj-lin-imgdeb8.sj.ifsc.edu.br" {
 #		include banco
 #		include auto_desligamento
 }
+##DEBIAN 9, naum vai funcionar porque o puppet client eh mais novo que o server
+node "debian9-virtual.sj.ifsc.edu.br" {
+#		include ingressa_ldap
+#		include irpf_lin
+#		include banco
+#		include auto_desligamento
+}
 ##UBUNTU MATE
 node "aluno-VirtualBox.sj.ifsc.edu.br" {
 #include octave

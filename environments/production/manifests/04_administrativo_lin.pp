@@ -12,6 +12,7 @@ node /^sj-lin-manut/ {
 	include rclocal_adm
 	include grub_lab_lin
 	include dhcp_auto
+	include irpf_lin
 }
 ########################## Laboratorio de prototipagem
 node /^sj-lin-labprot/ {
