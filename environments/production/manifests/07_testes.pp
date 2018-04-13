@@ -169,11 +169,12 @@ node "debian9-virtual.sj.ifsc.edu.br" {
 }
 ##UBUNTU MATE
 node "aluno-VirtualBox.sj.ifsc.edu.br" {
-#include octave
+#	include intellij18
 #	include cupsd
 #	include netbeans_8_2
 #	include packettracer7
 # include astah
+# include qgis
 #	include ingressa_ldap_novo
 # include android_studio3
 

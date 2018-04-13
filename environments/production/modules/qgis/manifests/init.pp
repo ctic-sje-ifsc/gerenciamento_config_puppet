@@ -43,8 +43,8 @@ class qgis {
 	}
 
 	exec { 'add_key_qgis':
-		command => "/usr/bin/apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 073D307A618E5811 ; /usr/bin/touch /var/gatinho_key_qgis",
-		creates => "/var/gatinho_key_qgis";
+		command => "/usr/bin/wget -O - https://qgis.org/downloads/qgis-2017.gpg.key | gpg --import ; /usr/bin/gpg --fingerprint CAEB3DC3BDF7FB45 ; /usr/bin/gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add - ; /bin/rm /var/gatinho_key_qgis ; /bin/rm /var/gatinho_key_qgis2 ; /usr/bin/touch /var/gatinho_key_qgis3",
+		creates => "/var/gatinho_key_qgis3";
 	}
 	exec { 'apt-get-update_qgis':
 		command => "/usr/bin/apt-get update",

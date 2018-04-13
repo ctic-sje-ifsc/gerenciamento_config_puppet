@@ -80,39 +80,6 @@ node /^sj-labprog/ {
 
 ########################################## INICIO LAB APOIO #################################################
 ## PROFESSOR Linux
-node "sj-lin-apoio-38114.sj.ifsc.edu.br" {
-	include sistema
-	include config_rede_labs
-	include grub_soh_lin
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes
-	include apagaaluno
-	include chave_compartilhada
-	include quadro_interativo
-	include ingressa_ldap
-	#include atualiza_mac
-	include netbeans_8_2
-
-
-	file { 'permissao_vmdk':
- 		path => '/home/VMDK/',
- 		ensure => directory,
- 		owner => aluno,
-		recurse => true,
- 		group => 'Domain Users',
-		mode => 0660,
-  }
-	include packettracer7
-}
-## PROFESSOR Linux NOVO
 node "sj-lin-apoio-744523.sj.ifsc.edu.br" {
 	include sistema
 	include config_rede_labs
@@ -142,18 +109,20 @@ node "sj-lin-apoio-744523.sj.ifsc.edu.br" {
 		recurse => true,
  		group => 'Domain Users',
 		mode => 0660,
-  }
+  	}
+
+    file { 'configura_monitor':
+        path => '/etc/profile.d/configura_monitor.sh',
+        ensure => file,
+        source => 'puppet:///modules/progpadroeslabs/configura_monitor_apoio.sh',
+        owner => root,
+        group => root,
+        mode => 0777,
+    }
 	include packettracer7
 }
-## PROFESSOR Windows
-node "sj-apoio-744523.sj.ifsc.edu.br" {
-		include sistema_win_labs
-		include ingressa_ldap
-		include progisp
-		include multisimdemo
-}
 ##
-
+#
 ##ALUNOS
 node /^sj-apoio/ {
 	include sistema
