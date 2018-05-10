@@ -12,11 +12,19 @@ class android_studio3 {
   	group => root,
   	mode => 1777,
   }
+  file { 'permissao.sh':
+    path => '/opt/ANDROID3/permissao.sh',
+    ensure => file,
+    source => 'puppet:///modules/android_studio3/permissao.sh',
+    owner => root,
+    group => root,
+    mode => 1777,
+  }
   exec { 'instala_android':
-  	command => '/bin/mv /opt/ANDROID3/android-studio.desktop /usr/share/applications/android-studio.desktop; /bin/chmod 644 /usr/share/applications/android-studio.desktop; /bin/bash /opt/ANDROID3/permissao.sh',
+  	command => '/bin/rm -rf /usr/share/applications/android-studio.desktop; /bin/mv /opt/ANDROID3/android-studio.desktop /usr/share/applications/android-studio.desktop; /bin/chmod 644 /usr/share/applications/android-studio.desktop; /bin/bash /opt/ANDROID3/permissao.sh',
   	creates => '/usr/share/applications/android-studio.desktop',
   	timeout => 0,
-    require => Exec['android_studio3'],
+    require => [Exec['android_studio3'], File['permissao.sh']],
   }
   file { '/home/aluno/.android':
   	ensure => link,
@@ -38,6 +46,7 @@ class android_studio3 {
 # }
   exec { 're_permissao':
     command => '/bin/bash /opt/ANDROID3/permissao.sh',
+    require => File['permissao.sh'],
     timeout => 0,
   }
   exec { 'remove_antigo_android':

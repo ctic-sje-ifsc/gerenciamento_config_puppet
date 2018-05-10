@@ -572,6 +572,10 @@ node /^sj-lin-transp/ {
 	include grub_soh_lin
 	include openjdk-7u111
 	include dhcp_auto
+	exec { 'configura_gnome_classic_default':
+		command => '/usr/bin/update-alternatives --install /etc/alternatives/x-session-manager gnome-session-classic /usr/bin/gnome-session-classic 99 ; /usr/bin/touch /var/gatilho_config_default_gnome_classic',
+		creates => '/var/gatilho_config_default_gnome_classic',
+	}
 }
 
 

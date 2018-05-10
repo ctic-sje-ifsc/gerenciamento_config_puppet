@@ -249,6 +249,7 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include netbeans_8_2
 	include packettracer7
 	include android_studio3
+	include intellij18
 	include foxit
 	##include atualiza_mac
 
@@ -295,11 +296,10 @@ node /^sj-labredes2/ {
 	include netbeans_8_2
 	include packettracer7
 	include android_studio3
-    ##include atualiza_mac
+	include intellij18
+  ##include atualiza_mac
 
 }
-
-
 ########################################## FIM REDES2 #################################################
 
 

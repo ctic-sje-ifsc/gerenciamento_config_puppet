@@ -21,6 +21,10 @@ node "server-storage-2" {
 	include ingressa_ldap
 }
 
+#Maquina do gabriel ubuntu mate 14.04
+node "osboxes.sj.ifsc.edu.br" {
+	include rstudio
+}
 
 
 #maquina virtual Ricardo
@@ -177,6 +181,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include qgis
 #	include ingressa_ldap_novo
 # include android_studio3
+include rstudio
 
 }
 ################################## FIM do teste do Ricardo

@@ -196,6 +196,7 @@ node /^sj-aud/ {
 node /^sj-vconf/ {
   include sistema_win
 	include ntp
+	include ingressa_ldap
 }
 
 ########################## Default
