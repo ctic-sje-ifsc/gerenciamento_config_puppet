@@ -29,6 +29,7 @@ node /^sj-lin-edfis/ {
 	include remoto_sapafadulto
 	include openjdk-7u111
 	include dhcp_auto
+  include foxit
 }
 node /^sj-lin-note-edifis/ {
 	include progsadm
