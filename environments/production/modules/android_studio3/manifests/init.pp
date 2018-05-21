@@ -13,7 +13,7 @@ class android_studio3 {
   	mode => 1777,
   }
   file { 'permissao.sh':
-    path => '/opt/ANDROID3/permissao.sh',
+    path => '/opt/permissao.sh',
     ensure => file,
     source => 'puppet:///modules/android_studio3/permissao.sh',
     owner => root,
@@ -21,7 +21,7 @@ class android_studio3 {
     mode => 1777,
   }
   exec { 'instala_android':
-  	command => '/bin/rm -rf /usr/share/applications/android-studio.desktop; /bin/mv /opt/ANDROID3/android-studio.desktop /usr/share/applications/android-studio.desktop; /bin/chmod 644 /usr/share/applications/android-studio.desktop; /bin/bash /opt/ANDROID3/permissao.sh',
+  	command => '/bin/rm -rf /usr/share/applications/android-studio.desktop; /bin/mv /opt/ANDROID3/android-studio.desktop /usr/share/applications/android-studio.desktop; /bin/chmod 644 /usr/share/applications/android-studio.desktop; /bin/bash /opt/permissao.sh',
   	creates => '/usr/share/applications/android-studio.desktop',
   	timeout => 0,
     require => [Exec['android_studio3'], File['permissao.sh']],
@@ -45,12 +45,19 @@ class android_studio3 {
 # 	target => '/opt/ANDROID3/.gradle',
 # }
   exec { 're_permissao':
-    command => '/bin/bash /opt/ANDROID3/permissao.sh',
+    command => '/bin/bash /opt/permissao.sh; /bin/touch /var/gatilho_permissao_androidStudio',
     require => File['permissao.sh'],
+    creates => '/var/gatilho_permissao_androidStudio',
     timeout => 0,
   }
-  exec { 'remove_antigo_android':
-    command => '/bin/rm -rf /opt/ANDROID; ',
-    timeout => 0,
+
+  file { '/opt/ANDROID':
+  	ensure => absent,
+    recurse => true,
   }
+
+  #exec { 'remove_antigo_android':
+  #  command => '/bin/rm -rf /opt/ANDROID; ',
+  #  timeout => 0,
+  #}
 }
