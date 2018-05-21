@@ -181,8 +181,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include qgis
 #	include ingressa_ldap_novo
 # include android_studio3
-include rstudio
-
+ include rstudio
 }
 ################################## FIM do teste do Ricardo
 
