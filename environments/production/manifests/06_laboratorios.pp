@@ -73,7 +73,6 @@ node /^sj-labprog/ {
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7
-
 }
 ##
 ########################################## FIM LAB PROG #################################################
@@ -251,6 +250,9 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include android_studio3
 	include intellij18
 	include foxit
+	include clion
+	include pycharm
+	include idea
 	##include atualiza_mac
 
 	file { 'permissao_vmdk':
@@ -297,6 +299,9 @@ node /^sj-labredes2/ {
 	include packettracer7
 	include android_studio3
 	include intellij18
+	include clion
+	include pycharm
+	include idea
   ##include atualiza_mac
 
 }
@@ -382,13 +387,37 @@ node /^sj-lab-bkp/ {
 
 ########################################## LAB CAD 1 2 E 3 #################################################
 
-## CAD 1, 2 E 3 - WINDOWS PROFESSOR E ALUNO
+## CAD 1, 2 E 3 - WINDOWS PROFESSOR
+
+node "sj-cad1-37247.sj.ifsc.edu.br" {
+	include sistema_win_labs
+	include sr2015
+	include ingressa_ldap
+	include sketchup
+}
+
+node "sj-cad2-38841.sj.ifsc.edu.br" {
+	include sistema_win_labs
+	include sr2015
+	include ingressa_ldap
+	include sketchup
+}
 
 node "sj-cad3-744528.sj.ifsc.edu.br" {
 	include sistema_win_labs
 	include sr2015
 	include ingressa_ldap
 	include sketchup
+	include bricscad
+}
+
+## CAD 1, 2 E 3 - WINDOWS ALUNO
+
+node /^sj-cad3/ {
+	include sistema_win_labs
+	include sr2015
+	include sketchup
+	include bricscad
 }
 
 node /^sj-cad/ {
@@ -515,7 +544,7 @@ node /^sj-labcad/ {
 	#include envia_iso
 	#include atualiza_mac
 	include disable_ipv6
-
+	include ingles_progs
 }
 
 ##

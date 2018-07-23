@@ -432,6 +432,7 @@ node /^sj-lin-coger/ {
 	include grub_lab_lin
 	include openjdk-7u111
 	include dhcp_auto
+	include qgis
 }
 #########################SECRETaria
 node /^sj-lin-secret/ {

@@ -21,6 +21,7 @@ class rstudio {
 		source => 'puppet:///modules/rstudio/rstudio-1.1.447-amd64.deb',
 	}
 
+/*#Comentado a pedido do Noronha
 	exec { 'link_java_to_r':
 		command => '/bin/ln -s /usr/lib/jvm/java-8-openjdk-amd64/ /usr/lib/jvm/default-java; /usr/bin/R CMD javareconf',
 		timeout => 0,
@@ -28,6 +29,7 @@ class rstudio {
 			package['r-cran-rjava'],
 		],
 	}
+*/
 
 	exec { 'dpkg:rstudio-1.1.447-amd64.deb':
 		command => "/usr/bin/dpkg -i /usr/local/src/rstudio-1.1.447-amd64.deb",

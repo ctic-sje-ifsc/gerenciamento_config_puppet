@@ -147,6 +147,7 @@ node /sj-ctic/ {
 node /^sj-merac-/ {
 	include sistema_win
 	include ntp
+  include bricscad
 }
 ########################## Coordenacao RAC
 node /^sj-corac-/ {
@@ -221,6 +222,7 @@ node /^sj-coger/ {
 	include ingressa_ldap
 	include ntp
   include sketchup
+  include bricscad
 }
 ########################## CGP
 node /^sj-cgp/ {

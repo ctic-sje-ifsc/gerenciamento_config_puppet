@@ -17,11 +17,12 @@ class openjdk-7u111 {
 		    creates => '/var/hold_openjdk-7u111',
 		    require => package['openjdk-7-jre'],
 		}
-		
+/*	#Comentado para testar o modulo rstudio, a pedido do Noronha	
 		exec {"set_mozilla-javaplugin.so":
 		    command => "/usr/sbin/update-alternatives --set mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so",
 		    require => package['openjdk-7-jre'],
 		}
+*/		
  	}
 
 	if $lsbdistcodename == trusty {

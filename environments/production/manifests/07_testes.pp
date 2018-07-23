@@ -155,6 +155,7 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 node "win7-64-pc.sj.ifsc.edu.br" {
 #   include ultravnc_win
 #   include kdenlive17
+	include sketchup
 }
 
 ##DEBIAN 8
@@ -180,8 +181,8 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include astah
 # include qgis
 #	include ingressa_ldap_novo
-# include android_studio3
- include rstudio
+ include android_studio3
+# include rstudio
 }
 ################################## FIM do teste do Ricardo
 
