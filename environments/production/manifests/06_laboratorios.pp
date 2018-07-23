@@ -409,6 +409,7 @@ node "sj-cad3-744528.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	include sketchup
 	include bricscad
+	include progisp
 }
 
 ## CAD 1, 2 E 3 - WINDOWS ALUNO
@@ -418,6 +419,7 @@ node /^sj-cad3/ {
 	include sr2015
 	include sketchup
 	include bricscad
+	include progisp
 }
 
 node /^sj-cad/ {
