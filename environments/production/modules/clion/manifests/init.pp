@@ -22,24 +22,6 @@ file { 'clion.desktop':
   mode => 0644,
 }
 
-#file { 'accepted':
-#  path => '/opt/clion/accepted',
-#  ensure => file,
-#  source => 'puppet:///modules/clion/accepted',
-#  owner => aluno,
-#  group => aluno,
-#  mode => 0644,
-#}
-#
-#file { 'jetbrains.tar.gz':
-#  path => '/opt/clion/jetbrains.tar.gz',
-#  ensure => file,
-#  source => 'puppet:///modules/clion/jetbrains.tar.gz',
-#  owner => aluno,
-#  group => aluno,
-#  mode => 0644,
-#}
-
 file { '/opt/clion':
   path => '/opt/clion',
   ensure => directory,

@@ -5,7 +5,7 @@ archive { '/tmp/idea.tar.gz':
   extract       => true,
   extract_command => 'tar xfz %s',
   extract_path  => '/opt',
-  source        => 'puppet:///modules/idea/idea.tar.gz',
+  source        => 'https://discovirtual.ifsc.edu.br/index.php/s/cuHvIHfz0YrKp9e/download',
   creates       => '/opt/idea/bin',
   cleanup       => true,
   user			=> aluno,

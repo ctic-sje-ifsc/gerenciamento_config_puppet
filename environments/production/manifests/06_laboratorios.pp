@@ -5,14 +5,14 @@
 ##PROFESSOR
 
 #windows
-node "sj-prog-38111.sj.ifsc.edu.br" {
+node "sj-prog-744523.sj.ifsc.edu.br" {
 		include sistema_win_labs
 		include ingressa_ldap
 		include progisp
 }
 
 #linux
-node /^sj-labprog-38111/ {
+node /^sj-labprog-744523/ {
 	include sistema
 	include config_rede_labs
 	include grub_lab_lin
@@ -41,6 +41,17 @@ node /^sj-labprog-38111/ {
  		group => 'Domain Users',
 		mode => 0660,
   }
+
+	file { 'configura_monitor':
+        path => '/etc/profile.d/configura_monitor.sh',
+        ensure => file,
+        source => 'puppet:///modules/progpadroeslabs/configura_monitor_labprog.sh',
+        owner => root,
+        group => root,
+        mode => 0777,
+    }
+
+
 }
 ##
 
@@ -556,6 +567,7 @@ node /^sj-labcad/ {
 #LABINT E LABINF
 
 ##LINUX PROFESSOR
+
 node "sj-lin-labinf-756045.sj.ifsc.edu.br" {
 	include sistema
 	include grub_lab_lin #include grub_lab_win
