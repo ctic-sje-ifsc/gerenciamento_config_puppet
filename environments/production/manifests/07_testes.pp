@@ -144,7 +144,7 @@ node "pc-sala.sj.ifsc.edu.br" {
 ################################## teste do Ricardo
 ##WINDOWS 32bits
 node "vrtual-PC.sj.ifsc.edu.br" {
-		include ingressa_ldap
+#		include ingressa_ldap
 #		include sair_ldap
 #		include irpf_win
 #		include winscp5
@@ -155,7 +155,7 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 node "win7-64-pc.sj.ifsc.edu.br" {
 #   include ultravnc_win
 #   include kdenlive17
-	include sketchup
+#  	include chemdraw_12
 }
 
 ##DEBIAN 8
@@ -181,7 +181,7 @@ node "aluno-VirtualBox.sj.ifsc.edu.br" {
 # include astah
 # include qgis
 #	include ingressa_ldap_novo
- include android_studio3
+# include android_studio3
 # include rstudio
 }
 ################################## FIM do teste do Ricardo
