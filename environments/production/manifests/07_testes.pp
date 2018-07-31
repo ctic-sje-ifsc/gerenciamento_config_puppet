@@ -155,7 +155,7 @@ node "vrtual-PC.sj.ifsc.edu.br" {
 node "win7-64-pc.sj.ifsc.edu.br" {
 #   include ultravnc_win
 #   include kdenlive17
-#  	include chemdraw_12
+  	include chemdraw_12
 }
 
 ##DEBIAN 8
