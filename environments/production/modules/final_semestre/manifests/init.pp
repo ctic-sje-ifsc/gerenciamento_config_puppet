@@ -14,6 +14,5 @@ class final_semestre {
 		creates => '/var/gatilho_zera_pasta_2',
 		timeout => 0,
 	}
-	include atualiza_mac
 
 }
