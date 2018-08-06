@@ -177,7 +177,7 @@ node "sj-redes1-744530.sj.ifsc.edu.br" {
 	include epoptes
 	include chave_compartilhada
 	include ingressa_ldap
-	#include atualiza_mac
+	include atualiza_mac
 	include netbeans_8_2
 	include packettracer7
 	include tracker
@@ -218,7 +218,7 @@ node /^sj-redes1/ {
 	include epoptes-client
 	include apagaaluno
 	include chave_compartilhada
-	#include atualiza_mac
+	include atualiza_mac
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7

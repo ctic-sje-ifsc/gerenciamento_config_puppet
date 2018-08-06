@@ -23,7 +23,7 @@ class rstudio {
 
 /*#Comentado a pedido do Noronha
 	exec { 'link_java_to_r':
-		command => '/bin/ln -s /usr/lib/jvm/java-8-openjdk-amd64/ /usr/lib/jvm/default-java; /usr/bin/R CMD javareconf',
+		command => '/bin/rm -rf /usr/lib/jvm/default-java;/bin/ln -s /usr/lib/jvm/java-8-openjdk-amd64/ /usr/lib/jvm/default-java; /usr/bin/R CMD javareconf',
 		timeout => 0,
 		require => [
 			package['r-cran-rjava'],
@@ -48,8 +48,8 @@ class rstudio {
 		creates => "/usr/local/lib/R/site-library/RWekajars",
 	}
 
-	exec { 'RWeka_0.4-37.tar.gz':
-		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/RWeka_0.4-37.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
+	exec { 'RWeka_0.4-38.tar.gz':
+		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/RWeka_0.4-38.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
 		timeout => 0,
 		creates => "/usr/local/lib/R/site-library/RWeka",
 		require => [
@@ -61,19 +61,19 @@ class rstudio {
 		timeout => 0,
 		creates => "/usr/local/lib/R/site-library/gdata",
 		require => [
-			exec['gtools_3.5.0.tar.gz'],
+			exec['gtools_3.8.1.tar.gz'],
 		],
 	}
-	exec { 'gmodels_2.16.2.tar.gz':
-		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/gmodels_2.16.2.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
+	exec { 'gmodels_2.18.1.tar.gz':
+		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/gmodels_2.18.1.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
 		timeout => 0,
 		creates => "/usr/local/lib/R/site-library/gmodels",
 		require => [
 			exec['gdata_2.18.0.tar.gz'],
 		],
 	}
-	exec { 'gtools_3.5.0.tar.gz':
-		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/gtools_3.5.0.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
+	exec { 'gtools_3.8.1.tar.gz':
+		command => '/usr/bin/wget https://cran.r-project.org/src/contrib/gtools_3.8.1.tar.gz -O /tmp/file.tar.gz; /usr/bin/R CMD INSTALL /tmp/file.tar.gz',
 		timeout => 0,
 		creates => "/usr/local/lib/R/site-library/gtools",
 	}
