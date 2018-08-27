@@ -30,8 +30,11 @@ node /^sj-labprog-744523/ {
 	include chave_compartilhada
 	include ingressa_ldap
 	include netbeans_8_2
-	#include atualiza_mac
+	include atualiza_mac
 	include foxit
+	include ides_jetbrains
+	
+	
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -80,58 +83,17 @@ node /^sj-labprog/ {
 	include epoptes-client
 	include apagaaluno
 	include chave_compartilhada
-	#include atualiza_mac
+	include atualiza_mac
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7
+	include ides_jetbrains
+	
+	
 }
 ##
 ########################################## FIM LAB PROG #################################################
 
-########################################## INICIO LAB APOIO #################################################
-## PROFESSOR Linux
-node "sj-lin-apoio-744523.sj.ifsc.edu.br" {
-	include sistema
-	include config_rede_labs
-	include grub_soh_lin
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes
-	include apagaaluno
-	include chave_compartilhada
-	include quadro_interativo
-	include ingressa_ldap
-	#include atualiza_mac
-	include netbeans_8_2
-
-
-	file { 'permissao_vmdk':
- 		path => '/home/VMDK/',
- 		ensure => directory,
- 		owner => aluno,
-		recurse => true,
- 		group => 'Domain Users',
-		mode => 0660,
-  	}
-
-    file { 'configura_monitor':
-        path => '/etc/profile.d/configura_monitor.sh',
-        ensure => file,
-        source => 'puppet:///modules/progpadroeslabs/configura_monitor_apoio.sh',
-        owner => root,
-        group => root,
-        mode => 0777,
-    }
-	include packettracer7
-}
-##
 #
 ##ALUNOS
 node /^sj-apoio/ {
@@ -259,11 +221,10 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include netbeans_8_2
 	include packettracer7
 	include android_studio3
-	include intellij18
 	include foxit
-	include clion
-	include pycharm
-	include idea
+	include ides_jetbrains
+	
+	
 	##include atualiza_mac
 
 	file { 'permissao_vmdk':
@@ -309,10 +270,9 @@ node /^sj-labredes2/ {
 	include netbeans_8_2
 	include packettracer7
 	include android_studio3
-	include intellij18
-	include clion
-	include pycharm
-	include idea
+	include ides_jetbrains
+	
+	
   ##include atualiza_mac
 
 }
@@ -695,6 +655,7 @@ node /^sj-labbib-/ {
 	  include rclocal_adm
 	  include grub_lab_win
 		include quadro_interativo
+		include qgis
 	}
 
 
@@ -787,6 +748,7 @@ node /^sj-aplica/ {
 		include ntp
 		include rclocal_adm
 		include grub_lab_win
+		include qgis
 	}
 
 #Lab Meios de transmissao
