@@ -143,6 +143,7 @@ node "sj-redes1-744530.sj.ifsc.edu.br" {
 	include netbeans_8_2
 	include packettracer7
 	include tracker
+	include ingles_progs
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -184,6 +185,7 @@ node /^sj-redes1/ {
 	include disable_ipv6
 	include netbeans_8_2
 	include packettracer7
+	include ingles_progs
 
 }
 
@@ -223,6 +225,8 @@ node "sj-lin-redes2-703872.sj.ifsc.edu.br" {
 	include android_studio3
 	include foxit
 	include ides_jetbrains
+	include ingles_progs
+
 	
 	
 	##include atualiza_mac
@@ -271,6 +275,8 @@ node /^sj-labredes2/ {
 	include packettracer7
 	include android_studio3
 	include ides_jetbrains
+	include ingles_progs
+
 	
 	
   ##include atualiza_mac
@@ -420,6 +426,7 @@ node "sj-labcad1-37247.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	#include envia_iso
 	#include atualiza_mac
+	include ingles_progs
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -452,6 +459,7 @@ node "sj-lin-cad3-744528.sj.ifsc.edu.br" {
 	include ingressa_ldap
 	include quadro_interativo
 	#include atualiza_mac
+	include ingles_progs
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
@@ -484,6 +492,7 @@ node "sj-labcad2-38841.sj.ifsc.edu.br" {
 	include chave_compartilhada
 	include ingressa_ldap
 	#include atualiza_mac
+	include ingles_progs
 
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
