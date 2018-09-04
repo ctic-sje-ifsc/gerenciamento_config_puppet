@@ -34,8 +34,6 @@ node /^sj-labprog-744523/ {
 	include foxit
 	include ides_jetbrains
 	
-	
-
 	file { 'permissao_vmdk':
  		path => '/home/VMDK/',
  		ensure => directory,
@@ -93,32 +91,6 @@ node /^sj-labprog/ {
 }
 ##
 ########################################## FIM LAB PROG #################################################
-
-#
-##ALUNOS
-node /^sj-apoio/ {
-	include sistema
-	include grub_soh_lin
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes-client
-	include apagaaluno
-	include chave_compartilhada
-	#include atualiza_mac
-	include disable_ipv6
-	include packettracer7
-	include netbeans_8_2
-
-	}
-##
-########################################## FIM LAB APOIO #################################################
 
 ########################################## INICIO LAB REDES1 #################################################
 
@@ -283,9 +255,6 @@ node /^sj-labredes2/ {
 
 }
 ########################################## FIM REDES2 #################################################
-
-
-
 
 
 ########################################## LAB BKP #####################################################
@@ -532,100 +501,6 @@ node /^sj-labcad/ {
 ##
 ########################################## FIM LAB CAD 1 2 E 3 #################################################
 
-########################################## INICIO LAB INFORMATICA #################################################
-#LABINT E LABINF
-
-##LINUX PROFESSOR
-
-node "sj-lin-labinf-756045.sj.ifsc.edu.br" {
-	include sistema
-	include grub_lab_lin #include grub_lab_win
-	include progpadroeslabs
-	include sshd_config
-	include config_rede_labs_2
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes
-	include apagaaluno
-	include chave_compartilhada
-	include ingressa_ldap
-	#include atualiza_mac
-	include netbeans_8_2
-
-	file { 'permissao_vmdk':
- 		path => '/home/VMDK/',
- 		ensure => directory,
- 		owner => aluno,
-		recurse => true,
- 		group => 'Domain Users',
-		mode => 0660,
-  	}
-	file { 'configura_monitor':
- 		path => '/etc/profile.d/configura_monitor.sh',
- 		ensure => file,
-		source => 'puppet:///modules/progpadroeslabs/configura_monitor_informatica.sh',
-		owner => root,
-   	 	group => root,
-		mode => 0777,
-  	}
-}
-##
-
-##LINUX alunos
-
-node /^sj-labin/ {
-	include sistema
-	include grub_lab_lin #include grub_lab_win
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	include eclipsemodificado
-	include rclocal
-	include epoptes-client
-	include apagaaluno
-	include chave_compartilhada
-	#include atualiza_mac
-	include disable_ipv6
-	include netbeans_8_2
-
-
-}
-##
-
-##WINDOWS alunos
-
-node /^sj-int/ {
-	include sistema_win_labs
-	include ltspice
-}
-node /^sj-inf/ {
-	include sistema_win_labs
-	include ltspice
-	#include multisimdemo
-}
-
-##WINDOWS prof
-node "sj-inf-756045.sj.ifsc.edu.br" {
-	include ingressa_ldap
-	include sistema_win_labs
-	include ltspice
-	#include multisimdemo
-}
-
-
-
-########################################## FIM LAB INFORMATICA #################################################
-
-
 ########################################## INICIO BILIOTECA #################################################
 #PC alunos biblioteca LINUX
 node /^sj-lin-labbiblio-/ {
@@ -706,6 +581,9 @@ node /^sj-labbib-/ {
 	}
 	########################################## FIM INTERATIVO #################################################
 
+########################################## INICIO LAB VOZ E IMAGEM #############################################
+
+
 #Lab voz e imagem - linux
 node /^sj-lin-labvoz/ {
 	include grub_soh_lin
@@ -723,6 +601,10 @@ node /^sj-labvo/ {
 	include sistema_win
 	#include ingressa_ldap
 }
+
+########################################## FIM LAB VOZ E IMAGEM #################################################
+
+########################################## INICIO LAB APLICADA #################################################
 
 #Lab aplicada - linux
 node /^sj-lin-aplicada/ {
@@ -743,6 +625,10 @@ node /^sj-aplica/ {
 	include multisimdemo
 }
 
+########################################## FIM LAB APLICADA #####################################################
+
+########################################## INICIO CIENCIAS HUMANDAS ##############################################
+
 #Lab Ciencias Humanas
 	#win
 	node /^sj-ciehu/ {
@@ -760,6 +646,10 @@ node /^sj-aplica/ {
 		include qgis
 	}
 
+########################################## FIM LAB APLICADA #####################################################
+
+########################################## INICIO LAB MEIOS DE TRANSMISSAO #########################################
+
 #Lab Meios de transmissao
 #Linux
 node /^sj-labmeios/{
@@ -770,7 +660,6 @@ node /^sj-labmeios/{
      include ingressa_ldap
      include senhaaluno
      include rclocal
- #   include apagaaluno
      include chave_compartilhada
 
  	 file { 'configura_monitor':
@@ -789,6 +678,10 @@ node /^sj-meios/{
 		include sistema_win_labs
 		include ingressa_ldap
 }
+
+########################################## FIM LAB MEIOS DE TRANSMISSAO #########################################
+
+########################################## INICIO LAB CAMARA DE TESTE #########################################
 
 #Lab Camera de teste
   #Windows
@@ -816,3 +709,5 @@ node /^sj-lin-labtest/ {
 	#include atualiza_mac
 	include disable_ipv6
 }
+
+########################################## FIM LAB CAMARA DE TESTE #########################################
