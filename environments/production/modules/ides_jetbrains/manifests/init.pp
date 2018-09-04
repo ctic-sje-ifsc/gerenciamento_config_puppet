@@ -6,13 +6,18 @@ class ides_jetbrains {
 	include pycharm
 	include idea
 
+  # Constatei o warning Gtk-Message: Failed to load module "pk-gtk-module" ao rodar pelo terminal
+ 	package { 'packagekit-gtk3-module':
+		ensure => latest,
+	}
 
   file { [ '/opt/jetbrains',
          '/opt/jetbrains/apps', ]:
     ensure => directory,
+    recurse => true,
     owner => aluno,
-    group => aluno,
-    mode => 0755,
+    group => 513,
+    mode => 0775,
   }
 
 
@@ -27,7 +32,7 @@ class ides_jetbrains {
     creates       => '/opt/jetbrains/apps/IDEA-U/ch-0',
     cleanup       => true,
     user			=> aluno,
-    group			=> aluno,
+    group			=> 513,
     require		=> File['/opt/jetbrains/apps'],
   }
 
@@ -51,7 +56,7 @@ class ides_jetbrains {
     creates       => '/opt/jetbrains/apps/CLion/ch-0',
     cleanup       => true,
     user			=> aluno,
-    group			=> aluno,
+    group			=> 513,
     require		=> File['/opt/jetbrains/apps'],
   }
 
@@ -75,7 +80,7 @@ class ides_jetbrains {
     creates       => '/opt/jetbrains/apps/PyCharm-P/ch-0',
     cleanup       => true,
     user			=> aluno,
-    group			=> aluno,
+    group			=> 513,
     require		=> File['/opt/jetbrains/apps'],
   }
 
@@ -99,7 +104,7 @@ class ides_jetbrains {
     creates       => '/opt/jetbrains/apps/JetBrains/Toolbox/bin/jetbrains-toolbox',
     cleanup       => true,
     user			=> aluno,
-    group			=> aluno,
+    group			=> 513,
     require		=> File['/opt/jetbrains/apps'],
   }
 
