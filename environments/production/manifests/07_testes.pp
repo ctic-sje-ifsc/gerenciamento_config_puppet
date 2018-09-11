@@ -22,8 +22,8 @@ node "server-storage-2" {
 }
 
 #Maquina do gabriel ubuntu mate 14.04
-node "osboxes.sj.ifsc.edu.br" {
-	include rstudio
+node "vm-gab-mate14.sj.ifsc.edu.br" {
+	include ides_jetbrains
 }
 
 
@@ -96,21 +96,10 @@ node /^sj-img-wubuntu7/ {
 	include rclocal_adm
 }
 
-node "sj-imagem-lin.sj.ifsc.edu.br" {
-	include sistema
-	include grub_lab_lin #include grub_lab_win
-	include progpadroeslabs
-	include sshd_config
-	include sudoers
-	include arduino_1_6_6
-	include senhaaluno
-	include netkit2
-	include atalhos_e_icones
-	#include eclipsemodificado ; so quando o arliones modificar
-	include rclocal
-	include epoptes-client
-	include apagaaluno
-	include netbeans8
+node "sj-lab-teste.sj.ifsc.edu.br" {
+	include clion
+	include pycharm
+	include idea
 }
 
 # Maquina Windows 7 Virtual Box
