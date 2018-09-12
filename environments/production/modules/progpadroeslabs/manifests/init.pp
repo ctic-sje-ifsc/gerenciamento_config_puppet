@@ -147,7 +147,7 @@ if $lsbdistcodename == jessie {
 
   ### lista pedida pelo arliones
   # retiramos porque estava com problema do repositorio "libcanberra-gtk-module:i386" "gtk2-engines-murrine:i386" "libgtk2.0-dev"
-  $list3 = [ "cmake", "pkg-config", "libavcodec-dev", "libavformat-dev", "libswscale-dev", "python-dev", "python-numpy", "libtbb2", "libtbb-dev", "libjpeg-dev", "libjasper-dev", "libdc1394-22-dev", "libopencv-*", "qemu-system-x86", "qemu-utils", "qemu-common", "libxt6:i386", "libdbus-glib-1-2:i386", "libasound2:i386", "libxpm4:i386", "libusb-0.1-4:i386" ]
+  $list3 = [ "cmake", "pkg-config", "libavcodec-dev", "libavformat-dev", "libswscale-dev", "python-numpy", "libtbb2", "libtbb-dev", "libjpeg-dev", "libjasper-dev", "libdc1394-22-dev", "libopencv-*", "qemu-system-x86", "qemu-utils", "qemu-common", "libxt6:i386", "libdbus-glib-1-2:i386", "libasound2:i386", "libxpm4:i386", "libusb-0.1-4:i386" ]
 
   package { $list3:
     ensure => latest,
