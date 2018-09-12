@@ -112,6 +112,12 @@ package { 'cadconverter':
   provider => 'chocolatey',
 }
 
+package { 'subtitleworkshop':
+  ensure   => latest,
+  install_options => ['-y', '--allow-empty-checksums'],
+  provider => 'chocolatey',
+}
+
 file {'zabbix_agentd.conf':
 	path => 'C:\ProgramData\zabbix\zabbix_agentd.conf',
 	ensure => file,
