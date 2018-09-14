@@ -120,10 +120,43 @@ if $lsbdistcodename == jessie {
    }
 
 }else {
-    #retiramos o libglade2-dev, "libgtkmm-3.0-dev" "libgtkmm-2.4-dev", "libgtk-3-dev", "libglade2-dev", "libswt-gtk-3-jni:i386", "fonts-powerline",  porque estava saindo do repositorio
+    #retiramos o libglade2-dev, "libgtkmm-2.4-dev", "libgtk-3-dev", "libglade2-dev", "libswt-gtk-3-jni:i386", "fonts-powerline",  porque estava saindo do repositorio
 	$list = [ "mcu8051ide", "ethtool", "minicom", "nmap", "vim", "gedit", "geany", "unrar", "ntfs-3g", "scratch", "latexila", "abntex", "eagle:i386", "texlive-lang-portuguese", "tree", "vlc", "kicad", "gdb", "audacity", "gimp", "avidemux", "inkscape", "libreoffice", "libreoffice-l10n-pt-br", "kdenlive", "pitivi", "konsole", "g++-4.8", "kalzium", "git", "subversion", "traceroute", "lib32stdc++6", "libc6-dev-i386" ,"dia", "python3", "ipython3", "spyder3", "logisim", "okular", "gcc-avr", "gcc-arm-none-eabi", "x2goclient", "pinta", "avr-libc", "avrdude", "gcc-arm-linux-gnueabi", "g++-arm-linux-gnueabi", "fritzing", "fritzing-data", "uuid-dev", "linux-headers-generic", "as31", "kile", "kile-l10n", "ssh", "cutecom", "sqlite3", "glade", "libssl-dev", "libpcre++-dev", "libboost-all-dev", "libsqlite3-dev", "libcurl4-openssl-dev", "libstdc++-4.8-dev", "libnl-3-dev", "libnl-genl-3-dev", "libdbus-1-dev", "libpcap-dev", "rabbitmq-server", "python-virtualenv", "u-boot-tools", "ipcalc", "wxmaxima", "kolourpaint4", "xournal", "iperf", "chrpath", "diffstat", "adobe-flashplugin", "mysql-workbench", "mysql-client", "maven2", "gradle", "npm", "nodejs", "nodejs-legacy", "xpdf", "gnupg2", "mosquitto-clients", "fish", "dnsutils", "whois", "resolvconf", "ttf-ancient-fonts", "distcc", "distccmon-gnome", "zlib1g-dev", "nemiver", "android-tools-adb", "python3.4-venv", "texlive-extra-utils", "sqlitebrowser", "libao-dev", "python-dev", "python3-dev", "libzmq-dev"]
 
   $package_purge = [ "pepperflashplugin-nonfree", "flashplugin-installer" ]
+
+  ##### Inicio do libgtkmm-3.0-dev - Necessario adicionar o ppa berkon - Chamado do Sobral IFSC#2018082010000888
+
+	file { 'source_ppa_berkon':
+		path => '/etc/apt/sources.list.d/berkon.list',
+		ensure => file,
+		source => 'puppet:///modules/progpadroeslabs/berkon.list',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	exec { 'add_key_berkon':
+		command => "/usr/bin/apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B390472C ; /usr/bin/touch /var/gatinho_key_source_list_berkon",
+		creates => "/var/gatinho_key_source_list_berkon";
+	}
+	exec { 'apt-get-update_berkon':
+		command => "/usr/bin/apt-get update",
+		subscribe => exec['add_key_berkon'],
+		require => exec['add_key_berkon'],
+		refreshonly => true,
+	}
+
+	package { 'libgtkmm-3.0-dev':
+		ensure => latest,
+		require => [
+				File ['source_ppa_berkon'],
+				Exec ['add_key_berkon'],
+		],
+	}
+
+  #### Fim do libgtkmm-3.0-dev
+
 }
 
   package { $list:
