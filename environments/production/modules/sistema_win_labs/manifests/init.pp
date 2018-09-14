@@ -150,6 +150,15 @@ file { 'puppet.conf':
   source => 'puppet:///modules/sistema_win_labs/puppet.conf',
   source_permissions => ignore,
 }
+
+file { 'C:\Users\Public\Desktop\Subtitleworkshop.lnk':
+  ensure => link,
+  owner => Administradores,
+  group => Administradores,
+  target => 'C:\Program Files (x86)\Subtitle Workshop\SubtitleWorkshop.exe',
+  require => package ['subtitleworkshop'],
+}
+
 exec { 'muda_permissao_multisim':
       command => '$Acl= Get-Acl "C:\Msmdemo" ; $Ar = New-Object  system.security.accesscontrol.filesystemaccessrule("aluno","FullControl", "ContainerInherit,ObjectInherit", "None","Allow") ; $Acl.SetAccessRule($Ar) ; Set-Acl "C:\Msmdemo" $Acl',
       provider => powershell,
