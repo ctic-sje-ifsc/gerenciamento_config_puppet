@@ -1,6 +1,32 @@
 #06_testes.pp
 
 #Testes
+
+node "sj-redes1-38126.sj.ifsc.edu.br" {
+
+	file { 'source_ppa_berkon':
+		path => '/etc/apt/sources.list.d/berkon.list',
+		ensure => file,
+		source => 'puppet:///modules/progpadroeslabs/berkon.list',
+		owner => root,
+		group => root,
+		mode => 0644,
+	}
+
+	exec { 'add_key_berkon':
+		command => "/usr/bin/apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B390472C ; /usr/bin/touch /var/gatinho_key_source_list_berkon",
+		creates => "/var/gatinho_key_source_list_berkon";
+	}
+	exec { 'apt-get-update_berkon':
+		command => "/usr/bin/apt-get update",
+		subscribe => exec['add_key_berkon'],
+		require => exec['add_key_berkon'],
+		refreshonly => true,
+	}
+
+
+}
+
 node "ctic-probook-6475b" {
 
 }
@@ -23,7 +49,6 @@ node "server-storage-2" {
 
 #Maquina do gabriel ubuntu mate 14.04
 node "vm-gab-mate14.sj.ifsc.edu.br" {
-	include ides_jetbrains
 }
 
 
