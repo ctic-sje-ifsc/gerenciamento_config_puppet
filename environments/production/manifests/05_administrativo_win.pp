@@ -148,6 +148,16 @@ node /^sj-merac-/ {
 	include sistema_win
 	include ntp
   include bricscad
+	package { 'r.project':
+  	ensure   => latest,
+  	install_options => ['-y', '--allow-empty-checksums'],
+  	provider => 'chocolatey',
+	}
+	package { 'r.studio':
+  	ensure   => latest,
+  	install_options => ['-y', '--allow-empty-checksums'],
+  	provider => 'chocolatey',
+	}
 }
 ########################## Coordenacao RAC
 node /^sj-corac-/ {
