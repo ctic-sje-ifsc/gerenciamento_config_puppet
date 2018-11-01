@@ -158,6 +158,7 @@ node /^sj-redes1/ {
 	include netbeans_8_2
 	include packettracer7
 	include ingles_progs
+	include sair_ldap
 
 }
 
@@ -599,6 +600,7 @@ node /^sj-lin-labvoz/ {
 #Lab voz e imagem - windows
 node /^sj-labvo/ {
 	include sistema_win
+	include mmanagal
 	#include ingressa_ldap
 }
 
