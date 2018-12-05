@@ -601,7 +601,12 @@ node /^sj-lin-labvoz/ {
 node /^sj-labvo/ {
 	include sistema_win
 	include mmanagal
-	#include ingressa_ldap
+	include ingressa_ldap
+	package { 'arduino':
+ 		ensure   => latest,
+ 		install_options => ['-y', '--allow-empty-checksums'],
+ 		provider => 'chocolatey',
+	}
 }
 
 ########################################## FIM LAB VOZ E IMAGEM #################################################

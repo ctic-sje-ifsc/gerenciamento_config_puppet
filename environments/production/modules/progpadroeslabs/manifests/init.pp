@@ -301,7 +301,7 @@ command => "/usr/sbin/usermod -a -G plugdev aluno",
 
 ###Casagrande: Ha a necessidade de que o usuario aluno esteja no grupo dialout para que o mesmo tenha acesso as portas seriais (ttyS0, ttyUSB0 e ttyACM0, geralmente) para ter acesso fisico a porta serial ou conversor serial-usb
   exec { 'addgroup dialout':
-	command => "/usr/sbin/usermod -a -G dialout aluno ; /usr/sbin/usermod -a -G dialout arliones.hoeller ; /usr/sbin/usermod -a -G dialout fernando.rodrigues ; /usr/sbin/usermod -a -G dialout roberto.matos",
+	command => "/usr/sbin/usermod -a -G dialout aluno ; /usr/sbin/usermod -a -G dialout arliones.hoeller ; /usr/sbin/usermod -a -G dialout fernando.rodrigues ; /usr/sbin/usermod -a -G dialout roberto.matos ; /usr/sbin/usermod -a -G dialout claudiacastro",
     schedule => daily,
 	}
 ###

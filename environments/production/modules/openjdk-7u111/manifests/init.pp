@@ -12,11 +12,26 @@ class openjdk-7u111 {
 			ensure => 'latest',
 		}
 		
+		package { 'firefox-esr':
+			ensure => '52.8.1esr-1~deb8u1',
+		}
+
+		package { 'firefox-esr-l10n-pt-br':
+			ensure => '52.8.1esr-1~deb8u1',
+		}
+
 		exec { "hold_openjdk-7u111":
 			command => "/usr/bin/apt-mark hold openjdk-7-jre openjdk-7-jre-headless ; /usr/bin/touch /var/hold_openjdk-7u111",
 		    creates => '/var/hold_openjdk-7u111',
 		    require => package['openjdk-7-jre'],
 		}
+
+		exec { "hold_firefox-esr":
+			command => "/usr/bin/apt-mark hold firefox-esr firefox-esr-l10n-pt-br ; /usr/bin/touch /var/hold_firefox-esr",
+		    creates => '/var/hold_firefox-esr',
+		    require => package['firefox-esr'],
+		}
+
 /*	#Comentado para testar o modulo rstudio, a pedido do Noronha	
 		exec {"set_mozilla-javaplugin.so":
 		    command => "/usr/sbin/update-alternatives --set mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so",
