@@ -1,50 +1,42 @@
 class x11vnc {
 	##x11VNC para area de trabalho remota
 
-		$initd_x11vnc = $lsbdistcodename ? {
-			trusty	=> 'puppet:///modules/x11vnc/ubuntu_x11vnc',
-			jessie => 'puppet:///modules/x11vnc/x11vnc',
-			wheezy => 'puppet:///modules/x11vnc/x11vnc',
-		}
 		package { 'x11vnc':
 			ensure => latest,
 		}
 
 		file { 'x11vnc':
 			path => '/etc/init.d/x11vnc',
+			ensure => absent,
+		}
+
+		file { 'x11vnc.service':
+			path => '/etc/systemd/system/x11vnc.service',
+			ensure => absent,
+		}
+
+		file { 'suporte_remoto.png':
+			path => '/var/suporte_remoto.png',
 			ensure => file,
-			source => $initd_x11vnc,
+			source => 'puppet:///modules/x11vnc/suporte_remoto.png',
 			owner => root,
 			group => root,
-			mode => 0755,
+			mode => 0644,
 		}
 
-		if $lsbdistcodename == jessie or $lsbdistcodename == wheezy {
-			file { 'x11vnc.service':
-				path => '/etc/systemd/system/x11vnc.service',
-				ensure => file,
-				source => 'puppet:///modules/x11vnc/x11vnc.service',
-				owner => root,
-				group => root,
-				mode => 0755,
-			}
+		file { 'suporte_remoto.desktop':
+			path => '/usr/share/applications/suporte_remoto.desktop',
+			ensure => file,
+			source => 'puppet:///modules/x11vnc/suporte_remoto.desktop',
+			owner => root,
+			group => root,
+			mode => 0644,
 		}
-		if $lsbdistcodename == jessie or $lsbdistcodename == wheezy {
-			exec { 'systemctl_daemon-reload_x11vnc':
-				command => "/bin/systemctl daemon-reload",
-				subscribe => File["x11vnc.service"],
-				refreshonly => true,
-			}
-		}
+
+
 		service { 'x11vnc':
-			ensure => running,
-			enable => true,
-			require => [
-	#			File['x11vnc'],
-				Package['x11vnc'],
-			],
+			ensure => stopped,
+			enable => false,
 		}
-	## fim do x11vnc
-
 
 }
